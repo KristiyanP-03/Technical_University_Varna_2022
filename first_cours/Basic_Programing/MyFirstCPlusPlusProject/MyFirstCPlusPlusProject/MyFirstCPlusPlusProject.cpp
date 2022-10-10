@@ -52,4 +52,70 @@ int main()
 	f = (3 + 4 * a) / (4 - 2 * c) + ((8 - a * a) * (4 + 2 * c)) / (b - c);
 	cout << "\n f=" << f << endl;
 	*/
+
+	// moq zad 1
+	/*
+	double grade;
+	cin >> grade;
+	if (grade <= 2.99)
+	{
+		cout << "Poor" << endl;
+	}
+	else if (grade >= 3.00 && grade <= 3.49)
+	{
+		cout << "bad" << endl;
+	}
+	else if (grade >= 3.50 && grade <= 4.49)
+	{
+		cout << "Good" << endl;
+	}
+	else if (grade >= 4.50 && grade <= 5.49)
+	{
+		cout << "Very Good" << endl;
+	}
+	else if (grade >= 5.50 && grade <= 6.00)
+	{
+		cout << "Execllent" << endl;
+	}
+	else
+	{
+		cout << "Invalid grade" << endl;
+	}
+	*/
+
+	// moq zad 2
+	string shape;
+	cin >> shape;
+	double weight;
+	double height;
+	double radius;
+	double area;
+	if (shape == "square")
+	{
+		cin >> weight;
+		area = weight * weight;
+	}
+	else if (shape == "rectangle")
+	{
+		cin >> weight;
+		cin >> height;
+		area = weight * height;
+	}
+	else if (shape == "circle")
+	{
+		cin >> radius;
+		area = 3.14 * (radius * radius);
+	}
+	else if (shape == "triangle")
+	{
+		cin >> weight;
+		cin >> height;
+		area = (weight * height) / 2;
+	}
+	else
+	{
+		cout << "Invalid shape!" << endl;
+		return 0;
+	}
+	cout << area << endl;
 }
