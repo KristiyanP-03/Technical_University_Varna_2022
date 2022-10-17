@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Arial";
+    font-size: 16px;
+    text-emphasis-color: #272727;
+    background-color: rgb(54, 54, 54);
+}
+
+h2 {
+    font-weight: 500;
+    text-align: 0 center;
+    padding: 20px, 20px, 20px, 20px;
+    font-size: 32px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+    text-indent: 40px;
+    padding-bottom: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #d76f35;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #d76f35;
+}
+
+a:hover {
+    color: #639cd1;
+}
+
+.header {
+    width: 100%;
+    height: 0 auto;
+    background-color: white;
+    padding-bottom: 1px;
+}
+
+.nav-container {
+    width: 90%;
+    margin: 0 auto;
+    margin: 15px, 20px, 20px. 20px;
+}
+
+#logo {
+    width: 250px;
+}
+
+.nav-container ul {
+    list-style-type: none;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 3%;
+}
+
+.nav-container li {
+    display: inline;
+    padding-right: 15px;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+}
+
+.nav-container a:hover {
+    color: #639cd1;
+}
+
+.cover {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.section {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.section_white {
+    background-color: white;
+}
+
+.section_lightgrey {
+    background-color: rgb(243, 243, 243);
+}
+
+#person_img {
+    float: left;
+    width: 30%;
+    height: auto;
+    padding: 20px, 30px, 10px, 0px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 30px;
+    border: 2px dotted #639cd1;
+    overflow: hidden;
+}
+
+.clearfix {
+    clear:left;
+}
+
+.photographers_block {
+    text-align: center;
+}
+
+.photographers_block img {
+    width: 15%;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px dashed #d76f35;
+    transition: 0.2s;
+}
+
+.photographers_block img:hover {
+    margin: 0px;
+}
+
+#photographers_details {
+    background-color: #d76f3508;
+    border: 1px solid #d76f3530;
+    border-radius: 5px;
+    padding-top: 20px;
+    margin: 30px;
+}
+
+.footer {
+    margin-top: -30px;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(43, 43, 43);
+}
+
+
+#debug_p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.debug_first_h2 {
+    margin-top: -3px;
+    padding-top: 50px;
+}
+
+.debug_second_h2 {
+    margin-top: -20px;
+    padding-top: 100px;
+}
