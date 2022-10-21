@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-image: url("site_background.jpg");
+}
+
+.main_site_top {
+    padding: 20px;
+    background-color: rgba(16, 16, 16, 0.751);
+}
+
+    h1 {
+        padding-top: 10px;
+        margin-bottom: -10px;
+        text-align: center;
+        font-family: Georgia, serif;
+        font-size: 40pt;
+        color:rgb(145, 34, 210);
+    }
+
+    #logo {
+        width: 10%;
+        height: auto;
+        margin-right: -120px;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+
+    .navigation ul {
+        list-style-type: none;
+        font-size: 18px;
+        text-align: right;
+        padding-right: 2%;
+        margin-bottom: -10px;
+    }
+    .navigation li {
+        display: inline;
+        padding-right: 15px;
+    }
+    .navigation_option {
+        text-decoration: none;
+        color: fuchsia;
+    }
+
+    #cover {
+        width: 80%;
+        height: auto;
+    }
+
+.short_introduction_block {
+    margin-left: 108px;
+    margin-right: 107px;
+    margin-top: -25px;
+    margin-bottom: -20px;
+    background-color:rgb(20, 12, 71);
+}
+    .short_introduction {
+        padding: 15px;
+        text-indent: 30px;
+        font-size: 15pt;
+        font-family: oblique, serif;
+        color:rgb(210, 169, 34);
+    }
+
+.main_page_navigation {
+    padding: 30px;
+    margin-left: 108px;
+    margin-right: 107px;
+    background-color: rgba(16, 16, 16, 0.751);
+}
+
+    .planets_navigation {
+        font-size: 12pt;
+        font-family: cursive;
+    }
+
+    .title_terrestrial_planets_navigation {
+        font-family: system-ui;
+        font-size: 13pt;
+        color: rgb(14, 85, 14);
+    }
+    #terrestrial_planets_navigation {
+        color: forestgreen;
+        text-decoration: none;
+    }
+    #terrestrial_planets_navigation:hover{
+        text-decoration: underline;
+    }
+
+    .title_of_title_largest_planets_navigation {
+        font-size: 14pt;
+        color: rgb(210, 169, 34);
+    }
+    .title_largest_planets_navigation {
+        font-family: system-ui;
+        font-size: 13pt;
+        color: rgb(250, 127, 97);
+    }
+    #largest_planets_navigation {
+        color: indianred;
+        text-decoration: none;
+    }
+    #largest_planets_navigation:hover{
+        text-decoration: underline;
+    }
+
+    .title_ice_planets_navigation {
+        font-family: system-ui;
+        font-size: 13pt;
+        color: rgb(70, 206, 255);
+    }
+    #ice_planets_navigation {
+        color: aquamarine;
+        text-decoration: none;
+    }
+    #ice_planets_navigation:hover{
+        text-decoration: underline;
+    }
+
+.main_site_body {
+    padding: 30px;
+    margin-left: 108px;
+    margin-right: 107px;
+    margin-top: -16px;
+    background-color:rgba(50, 40, 129, 0.436);
+}
+div p {
+    text-indent: 30px;
+    margin-left: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+    #short_info {
+        font-size: 13pt;
+        font-family: cursive;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding-bottom: 100px;
+        color: rgb(34, 96, 210);
+    }
+
+    h3 {
+        text-indent: 60px;
+        margin-bottom: 10px;
+        font-size: 30pt;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .main_site_body p {
+        font-family: cursive;
+    }
+
+    #planet_pic {
+        width: 10%;
+        height: auto;
+        float: left;
+        padding-right: 15px;
+    }
+
+        .sun {
+            color: rgb(165, 149, 56);
+        }
+
+    .inner_planets {
+        margin-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: dotted 2px;
+        color: azure;
+    }
+
+        .mercury {
+            color: rgb(196, 158, 120);
+        }
+        .venus {
+            color: rgb(254, 138, 29);
+        }
+        .earth {
+            color: forestgreen;
+        }
+        .mars {
+            color: rgb(122, 48, 122);
+        }
+
+    .outer_planets {
+        margin-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: dotted 2px;
+        color: gray;
+    }
+
+        .jupiter {
+            color: rgb(196, 158, 120);
+        }
+        .saturn {
+            color: rgb(108, 110, 139);
+        }
+        .uranus {
+            color: rgb(0, 145, 255);
+        }
+        .neptune {
+            color: rgb(0, 38, 255);
+        }
+
+footer {
+        width: 100%;
+        height: 100px;
+        background-color: rgba(16, 16, 16, 0.751);
+}
+
+        
