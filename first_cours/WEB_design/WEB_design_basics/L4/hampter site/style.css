@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-image: url("background.jpg");
+}
+
+.site_title {
+    background-color: rgb(163, 246, 162);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+    .logo {
+        width: 10%;
+        height: auto;
+        border-radius: 50%;
+        float: left;
+        margin-top: 25px;
+        margin-right: -70px;
+        margin-left: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: Georgia, serif;
+        font-size: 40pt;
+        color: rgb(96, 96, 96);
+    }
+    h4 {
+        text-align: center;
+        font-family: Georgia, serif;
+        font-size: 12pt;
+        color: rgb(148, 148, 148);
+        margin-left: 60px;
+        margin-top: -30px;
+    }
+.navigation {
+    margin-top: -16px;
+    background-color: rgb(136, 136, 136);
+    list-style-type: none;
+}
+    .navigation li {
+        display: inline;
+        padding-right: 15px;
+    }
+    .navigation_option {
+        text-decoration: none;
+        font-size: 18pt;
+        color:  rgb(163, 246, 162);
+    }
+.body {
+    background-color: rgb(163, 246, 162);
+    margin-top: -16px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+    .body img {
+        width: 30%;
+        height: auto;
+        border-radius: 50%;
+        float: left;
+        margin-top: 50px;
+        margin-left: 30px;
+        margin-right: 100px;
+    }
+        #fix_mitko {
+            height: 200px;
+            width: 230px;
+        }
+    #table {
+        margin-left: -150px;
+        margin-right: -150px;
+        margin-bottom: 150px;
+        border-radius: 10%;
+        background-color: rgb(136, 136, 136);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    table {
+        border:2px solid darkgreen;
+        border-collapse: collapse;
+    }
+
+    caption {
+        text-align: left;
+        font-size: 36pt;
+        color:white;
+    }
+    
+    th,td {
+        border:2px solid black;
+        padding:10px;
+        text-align: center;
+    }
+    
+    th {
+        background-color: rgb(113, 182, 112);
+        font-size: 18px;
+        color: white;
+    }
+    .aside {
+        background-color: rgb(113, 182, 112);
+        color: white;  
+    }
+    
+    tr:nth-child(even) {
+        background-color:azure;
+    }
+    tr:nth-child(odd) {
+        background-color:rgb(255, 252, 164);
+    }
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(136, 136, 136);
+}
