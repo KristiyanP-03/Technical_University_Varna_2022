@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <style>
+        .content { 
+            width: 80%; 
+            height: 100vh; 
+            margin: 0 auto; 
+            background-color: #eee; 
+            padding:  40px; 
+        }
+        </style>
+    </head> 
+    <body> 
+        <div class="content"> 
+            <label>Моля, въведете датата на рождения си ден: </label> 
+            <input type="date" name="date" id="date" placeholder="dd/mm">      
+            <input type="button" value="ОК!" onclick="whatsYourSign()"> 
+            <p id="par"></p> 
+        </div> 
+    <script>
+        function whatsYourSign()
+        {
+            let yourDate = document.getElementById("date");
+            if (yourDate > '23/10' && yourDate < '22/11')
+            {    
+                let sign = "скорпион";
+                document.getElementById("par").innerHTML = sign;
+            }
+            else
+            {
+                let sign = "ужилени от скорпион";
+                document.getElementById("par").innerHTML = sign;
+            }
+        }
+    </script> 
+    </body> 
+</html> 

@@ -1,0 +1,4 @@
+﻿  Zad.cpp
+Zad.obj : error LNK2019: unresolved external symbol "void __cdecl fill_array(int * const,int,int &)" (?fill_array@@YAXQEAHHAEAH@Z) referenced in function main
+Zad.obj : error LNK2019: unresolved external symbol "int __cdecl search(int const * const,int,int)" (?search@@YAHQEBHHH@Z) referenced in function main
+D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\UprNaLekcii_N8\x64\Debug\UprNaLekcii_N8.exe : fatal error LNK1120: 2 unresolved externals

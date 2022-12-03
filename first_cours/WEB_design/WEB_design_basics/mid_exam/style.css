@@ -1,0 +1,73 @@
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+    margin: 20px;
+}
+
+caption {
+    font-size: 16px;
+    color: #333;
+    font-family: cursive;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+        img {
+            height: auto;
+            width: 100%;
+            display: block;
+        }
+        th, td {
+            border:1px solid #222;
+            text-align: center;
+            
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
+        }
+            th {
+                color: #eee;
+                background-color: blueviolet;
+            }
+            td {
+                color: black;
+            }
+                #peak {
+                    background-color: lightblue;
+                }
+.underlined {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+<!--Naigaciq-->
+.nav{
+    background-color: blueviolet;
+    padding: 1px;
+}
+    .nav ul {
+        margin-left: -20px;
+    }
+    .nav li {
+        text-align: left;
+        display: inline;
+        
+    }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin-right: 15px;
+        }
