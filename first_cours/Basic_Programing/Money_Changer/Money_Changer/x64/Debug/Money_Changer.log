@@ -1,0 +1,4 @@
+﻿  SDR_KristiyanPisev_FN22621663.cpp
+D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\Money_Changer\Money_Changer\SDR_KristiyanPisev_FN22621663.cpp(209,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\Money_Changer\Money_Changer\SDR_KristiyanPisev_FN22621663.cpp(301,26): warning C4244: '=': conversion from 'std::streamoff' to 'long', possible loss of data
+  Money_Changer.vcxproj -> D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\Money_Changer\x64\Debug\Money_Changer.exe

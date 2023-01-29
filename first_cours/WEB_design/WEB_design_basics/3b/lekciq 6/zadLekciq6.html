@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- zad1 p id="demo"></p>
+    <script>
+        alert(5 + 3);
+        alert("5" + "3");
+        alert(5 + 3 + "Моето име")
+        alert("Моето име" + 5 + 3)
+    </script -->
+    <p id="demo"></p>
+    <script>
+        let firstNumber = prompt("Въведете първото число:");
+        let secondNumber = prompt("Въведете второто число:");
+        firstNumber = parseInt(firstNumber);
+        secondNumber = parseInt(secondNumber);
+
+        if (isNaN(firstNumber) || isNaN(secondNumber))
+            console.log("Не са въведени числа");
+        else
+            console.log(firstNumber + secondNumber);
+    </script>
+
+
+</body>
+
+</html>

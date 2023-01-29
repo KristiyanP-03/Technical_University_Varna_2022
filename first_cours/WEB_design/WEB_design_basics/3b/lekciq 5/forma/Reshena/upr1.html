@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HTML form</title>
+</head>
+<body>
+    <form action="php/some_action.php" method="post">
+        <h4>Форма за поръчки</h4>
+<fieldset>
+<legend>Вашите данни</legend>
+<label for="firstname">Име</label>
+<input type="text" name="firstname" id="firstname" required/>
+<label for="lastname">Фамилия</label>
+<input type="text" name="lastname" id="lastname" required/>
+<label for="password">Парола</label>
+<input type="password" name="password" id="password" required placeholder="Моля, въведете парола за достъп"/>
+<label for="email">Електронна поща</label>
+<input type="email" name="email" id="email" />
+<label for="phone">Телефон за контакт</label>
+<input type="tel" name="phone" id="phone" />
+</fieldset>
+
+<fieldset>
+<legend>Вашата поръчка</legend>
+
+<input type="radio" name="cake" id="101" value="101" checked>
+</label><label for="101">торта "Спайдърмен"</label>
+<input type="radio" name="cake" id="102" value="102">
+<label for="102">торта "Сладки сънища"</label>
+<input type="radio" name="cake" id="103" value="103">
+<label for="103">торта "Мече-подарък"</label><br>
+
+
+<label for="cover">Желана глазура</label>
+<select name="cover" id="cover">
+    <option value="Захарно тесто">Захарно тесто</option>
+    <option value="Маслен крем">Маслен крем</option>
+    <option value="Сметана" selected>Сметана</option>
+</select>
+
+<label for="color">Цвята на глазурата</label>
+<input type="color" name="color" id="color"><br>
+
+<input type="checkbox" name="candles" id="candles" value="yes">
+<label for="candles">Желая към тортата да бъдат добавени свещички с цифри </label>
+<input type="number" name="years" id="years" min="0" max="130" value="1" ><br>
+<input type="checkbox" name="label" id="label" value="yes">
+<label for="label">Желая надпис върху тортата</label>
+
+<textarea name="content" id="content" cols="30" rows="10" disabled>Въведете желания надпис</textarea>
+<label for="address">Адрес за доставка</label>
+<input type="text" name="address" id="address">
+
+<label for="date">Желана дата за доставка</label>
+<input type="date" name="date" id="date">
+</fieldset>
+<div class="button-container">
+<input type="submit" value="Изпрати заявка">
+<input type="reset" value="Изчисти формата">
+</div>
+    </form>
+</body>
+</html>

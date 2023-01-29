@@ -1,0 +1,4 @@
+﻿  upr13_SDR_lib_frame.cpp
+C:\Users\royal\Downloads\upr13_SDR_lib_frame.cpp(125,19): warning C4244: '=': conversion from 'std::streamoff' to 'long', possible loss of data
+C:\Users\royal\Downloads\upr13_SDR_lib_frame.cpp(86): warning C4715: 'enter': not all control paths return a value
+  PodgotovkaZaKonrtr.vcxproj -> D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\PodgotovkaZaKonrtr\x64\Debug\PodgotovkaZaKonrtr.exe

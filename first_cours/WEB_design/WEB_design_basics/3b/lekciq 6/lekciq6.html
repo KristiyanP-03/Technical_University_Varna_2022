@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Заглавие</title>
+</head>
+
+<body>
+    <!-- 1zad p id="my"></p>
+    <script>
+        alert("Hello World!");
+    </script -->
+
+    <!-- 2zad p id="my"></p>
+    <script type="text/javascript">
+        document.getElementById("my").innerHTML = "Hello world!";
+    </script -->
+
+    <!-- 3zad p id="my"></p>
+    <script type="text/javascript">
+        document.write("<p>Hello world!</p>");
+    </script -->
+
+    <!-- 4zad ne polzvai documentwrite() script type="text/javascript">
+        function myFunction() {
+            document.write("Hello world!");
+        }
+    </script>
+    <p>Параграф първи</p>
+    <p>Параграф втори</p>
+    <p>Параграф трети</p>
+    <input type="button" onclick="myFunction()" value="Натисни ме!" / -->
+
+    <!-- 5zad p id="my"></p>                           css e po burz ot js, polzvai css kudeto moje vmesto js
+    <script type="text/javascript">                    let i const rabotqt v blok (ot { do } ), var e vuv funkciq
+        debugger; #spira programata tuk                  let a = 5;         -bez let satva globalna
+        console.log("Hello world!");                     a = "smth";
+    </script -->
+
+    <!-- 6zad script type="text/javascript">
+        {
+            var a = 5;
+            let b = 7;     <-   XXXXXXXXXXXX
+            const PI = 3.14;      <- XXXXXXXXXXXX 
+        }
+        document.write(a + '<br>');
+        let b = 7;                     <- tuk za da izleze
+        document.write(b + '<br>');
+        const PI = 3.14;              <- tuk za da izleze
+        document.write(PI);
+    </script -->
+
+    <!-- 6zad p>Натиснете бутона за демонстрация на prompt</p>
+    <button onclick="myFunction()">Натисни ме!</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            var person = prompt("Моля, въведете Вашето име!");
+            if (person != null) {
+                document.getElementById("demo").innerHTML =
+                    "Здравейте, " + person + "! Как сте днес?";
+            }
+        }
+    </script -->
+
+    <!-- 7zad p>Натиснете бутона за демонстрация на изкачащ прозорец confirm</p>
+    <button onclick="myFunction()">Натисни ме!</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            var txt;
+            var r = confirm("Искате ли да продължите да изучавате JS?");
+            if (r == true) {
+                txt = "Добро решение!";
+            } else {
+                txt = "Не знаете какво губите!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script -->
+
+</body>
+
+</html>

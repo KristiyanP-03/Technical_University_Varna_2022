@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  body {
+    font-family: arial, sans-serif;
+  }
+ 
+  .content {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #eee;
+    padding:  40px;
+  }
+  p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+ 
+  input[type="button"] {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: lightblue;
+    font-size: 16px;
+    border: 1px solid blue;
+    width:25%;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+   <div>
+    <p>Работно време на магазина: <br>
+    Понеделник-петък: 8-22 часа<br> 
+    Събота: 9-16 часа <br>
+    Неделя: почивен ден </p>
+    <input type="button" value="Провери дали магазинът е отворен!" onclick="check()">    
+     <p id="par"></p>
+  </div> 
+</div>
+<script>
+  let date = new Date()
+  let day = date.getDay();
+  let hour = date.getHours();
+  let closed = "затворено е";
+  let opened = "отворено е";
+
+  function check()
+  {
+    if (day >= 1 || day <= 5)
+    {
+      if (hour >= 8 || hour <= 22)
+      {
+        document.getElementById("par").innerHTML = opened;
+      }
+      else
+      {
+        document.getElementById("par").innerHTML = closed ;
+      }
+    }
+    else if (day == 6)
+    {
+      if (hour >= 9 || hour <= 16)
+      {
+        document.getElementById("par").innerHTML = opened;
+      }
+      else
+      {
+        document.getElementById("par").innerHTML = closed ;
+      }
+    }
+    else
+    {
+      document.getElementById("par").innerHTML = closed;
+    }
+  }
+  
+
+</script>
+</body>
+</html>

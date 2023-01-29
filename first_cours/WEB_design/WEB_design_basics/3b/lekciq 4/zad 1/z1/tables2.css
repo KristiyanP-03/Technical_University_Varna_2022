@@ -1,0 +1,43 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+}
+
+table, th, td {
+    border:1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    background-color:brown;
+    color:white;
+}
+
+th, td {
+    padding:10px;
+    vertical-align: top;
+}
+
+td {
+    text-align: left;
+}
+
+td:nth-child(3) {
+    text-align: center;
+}
+
+.final_ranking {
+    background-color: silver;
+}
+
+.best_ranking {
+    background-color: gold;
+}
+
+caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>​
+<html>​
+
+<head>​
+
+    <meta charset="utf-8">​
+    <title>Заглавие някакво</title>​
+
+</head>​
+
+<body>​
+
+    <!-- zad1 p>Проба 1</p>​
+        <p>Проба 2</p>​
+        <script type="text/javascript">​
+            let test = document.getElementsByTagName("p");       ​ - zapzava stoinost v promenliva test
+            console.log(test[0].innerHTML);                - vzima element po tag <p> i indeks ako sa mnogo
+            console.log(test[1].innerHTML); ​
+        </script><p id="test">Проба</p-->
+
+
+
+    <!-- zad2 p class="myclass">Проба 1</p>​
+        <p>Проба 2</p>​
+        <p class="myclass">Проба 3</p>​
+        <script type="text/javascript">
+            let test = document.getElementsByClassName("myclass");​
+            console.log(test[1].innerHTML); ​
+        </script-->
+
+
+
+    ​
+    <!-- zad3 p id="test">Проба 1</p>​
+        <script type="text/javascript">​
+            let test = document.getElementById("test");​ -- samo pri id e Element / bez s    Pri class i tag e Elements => taka stava kolekciq
+            test.innerHTML="Заменен текст"; ​
+        </script-->
+
+
+
+    <!-- zad4 a href="https://www.abv.bg/">Моята поща</a>​
+        <script type="text/javascript">​
+            let mail = document.getElementsByTagName("a");​
+            mail[0].href="https://mail.google.com/"; ​
+            //document.links[0].href="https://mail.google.com/";​
+        </script-->
+
+
+
+    <!-- zad5 p>Проба</p>​
+        <script type="text/javascript">​
+            let test = document.getElementsByTagName("p");​
+            test[0].style.color="red"; ​
+        </script-->​
+
+
+
+    <!-- zad6 a href="https://www.abv.bg/">Моята поща</a>​
+        <script type="text/javascript">​
+            let mail = document.getElementsByTagName("a");​
+            mail[0].setAttribute("target","_blank"); ​
+        </script-->
+
+
+    <!-- zad7 ul id="list">​
+            <li>Първо</li>​
+            <li>Второ</li>​
+        </ul>​
+        <script type="text/javascript">​
+            let listItem = document.createElement("li");​
+            listItem.innerHTML="Трето";​
+            document.getElementById("list").appendChild(listItem);​
+        </script-->
+
+
+
+    <!-- zad8 ul id="myList"><li>Първо</li><li>Второ</li><li>Трето</li></ul>​
+        <button onclick="myFunction()">Натисни ме!</button>​
+        <script type="text/javascript">​
+            function myFunction() 
+            {​
+                var list = document.getElementById("myList");​
+                list.removeChild(list.childNodes[0]);​
+            }​
+        </script-->
+
+
+
+    <!-- zad9 ul id="myList"><li>Първо</li><li>Второ</li><li>Трето</li></ul>​
+        <button onclick="myFunction()">Натисни ме!</button>​
+        <script type="text/javascript">​
+            function myFunction() 
+            {​
+                var textnode = document.createTextNode("Заменен текст");​
+                var item = document.getElementById("myList").childNodes[0];​
+                item.replaceChild(textnode, item.childNodes[0]);​
+            }​
+        </script-->
+
+</body>​
+
+</html>

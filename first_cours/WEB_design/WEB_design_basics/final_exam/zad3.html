@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  body {
+    font-family: arial, sans-serif;
+  }
+ 
+  .content {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #eee;
+    padding:  40px;
+  }
+  p {
+    color: black;
+    font-size: 16px;
+  }
+ 
+  input[type="button"] {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: lightblue;
+    font-size: 16px;
+    border: 1px solid blue;
+  }
+
+</style>
+</head>
+<body>
+  <div class="content">
+   <div>
+    <p id="par"></p>
+    <input type="button" value="Go!" onclick="enter()"> 
+  </div> 
+</div>
+<script>
+    function enter()
+    {
+        let name = prompt("Please enter your name", "");
+        let bd = prompt("Please enter your birthday", "");
+        let int_bd = parseInt(bd);
+        let age = 2022 - int_bd;
+        txt = "Здравейте, " + name + ", през 2022 г. сте на " + age + " години.";
+        document.getElementById("par").innerHTML = txt;
+    }
+</script>
+</body>
+</html>

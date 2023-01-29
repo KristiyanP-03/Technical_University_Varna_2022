@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .content {
+            width: 80%;
+            height: 100vh;
+            margin: 0 auto;
+            background-color: #eee;
+            padding: 40px;
+        }
+
+        .list-container {
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        body {
+            font-family: arial, sans-serif;
+        }
+
+        input[type=button] {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #222;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type=text] {
+            background-color: #f4f4f4;
+            border: 1px #ccc solid;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 8px 10px;
+            color: #555;
+            width: 30%;
+        }
+
+        #winner {
+            text-align: center;
+            font-size: 24px;
+            color: darkred;
+        }
+
+        li {
+            line-height: 1.75;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            float: left;
+            width: 15%;
+            height: auto;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <img src="https://jf-staeulalia.pt/img/other/59/collection-christmas-cliparts-holly.png" alt="Имел" />
+        <h1>Коледна томбола</h1>
+        <div class="centered">
+            <label>Напишете имената на участника: </label>
+            <input type="text" name="part" id="part" />
+            <input type="button" value="Добави" onclick="add_person()"/>
+        </div>
+        <div class="clear"></div>
+        <div class="list-container">
+            <!--<p id="list"></p>-->
+            <ol id="list"></ol>
+        </div>
+        <div class="centered">
+            <input type="button" value="Изтегли печеливш участник" onclick="choice_winner()" />
+            <p id="winner"></p>
+        </div>
+    </div>
+    <script>
+        let names = [];
+        function add_person()
+        {
+            current_name = document.getElementById("part").value;
+            names.push(current_name)
+            let list_of_names = "<p>" + names.join("</p><p>") + "</p>";
+            document.getElementById("list").innerHTML = list_of_names;
+        }
+
+        function choice_winner()
+        {
+            let number = Math.floor((Math.random() * names.length));
+            let winner = names[number];
+            document.getElementById("winner").innerHTML = "Winner is: " + winner;
+        }
+    </script>
+</body>
+
+</html>

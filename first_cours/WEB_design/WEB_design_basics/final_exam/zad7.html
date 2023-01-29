@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  body {
+    font-family: arial, sans-serif;
+  }
+ 
+  .content {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #eee;
+    padding:  40px;
+  }
+  p {
+    color: black;
+    font-size: 16px;
+  }
+ 
+  input[type="button"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 30px;
+    background-color: lightblue;
+    font-size: 16px;
+    border: 1px solid blue;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+   <div>
+    <p>Участници в конференцията</p>
+    <ol>
+<li>доц. д-р Иван Иванов</li>
+<li>проф. д-р Свилен Николов</li>
+<li>доц. д-р Петър Никодимов</li>
+<li>доц. д-р Ася Пеева</li>
+<li>гл. ас. д-р Васил Василев</li>
+<li>доц. д-р Петър Никодимов</li>
+<li>ас. Антон Стоянов</li>
+<li>доц. д-р Петър Никодимов</li>
+<li>ас. Надя Костова</li>
+<li>проф. д-р Лъчезар Антонов</li>
+    </ol>
+    <input type="button" value="Оцвети!" onclick="find()"> 
+  </div> 
+</div>
+<script>
+    function find()
+    {
+        let array = [];
+        for (let index = 0; index < 10; index++) 
+        {
+            array = [];
+            let person = document.getElementsByTagName('li')[index].innerHTML;
+            array = person.split(" ");
+            if (array[0] == "ас.") {
+                document.getElementsByTagName('li')[index].style.backgroundColor  = "lightblue";
+            }
+        }
+    }
+</script>
+</body>
+</html>

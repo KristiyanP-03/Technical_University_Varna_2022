@@ -1,0 +1,4 @@
+﻿  DSR_na_KristiyanPisev.cpp
+D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\DomashnaSemestrialnaRabota\DomashnaSemestrialnaRabota\DSR_na_KristiyanPisev.cpp(209,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\DomashnaSemestrialnaRabota\DomashnaSemestrialnaRabota\DSR_na_KristiyanPisev.cpp(301,26): warning C4244: '=': conversion from 'std::streamoff' to 'long', possible loss of data
+  DomashnaSemestrialnaRabota.vcxproj -> D:\Repositories\TechnicalUniversityVarna_work\first_cours\Basic_Programing\DomashnaSemestrialnaRabota\x64\Debug\DomashnaSemestrialnaRabota.exe

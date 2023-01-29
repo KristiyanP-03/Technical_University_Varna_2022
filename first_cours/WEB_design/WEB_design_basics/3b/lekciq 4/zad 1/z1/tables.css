@@ -1,0 +1,19 @@
+table {
+    border:2px solid darkgreen;
+    border-collapse: collapse;
+}
+
+th,td {
+    border:2px dotted grey;
+    padding:10px;
+    text-align: center;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color:azure;
+}

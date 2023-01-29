@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form {
+    width: 50%;
+    margin:40px auto;
+    padding: 20px 50px;
+    background-color:#f6f6f6; 
+}
+
+h4 {
+    text-align: center;
+    font-size: 18px;
+    color: #336699;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+fieldset {
+    padding:20px 30px;
+    margin: 0 20px 30px;
+    border-radius: 5px;
+}
+
+legend {
+    color: #336699;
+    padding: 0 5px;
+
+}
+
+label {
+    color: #333;
+    margin-right: 5px;
+}
+
+input[type=text], 
+input[type=password],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+    display: block;
+    width:100%;
+    margin: 5px 0 10px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px 2px #ddd;  
+}
+
+option {
+    padding:5px 10px;
+}
+
+input[type=color],
+input[type=checkbox],
+input[type=number],
+input[type=date] {
+    display: inline-block;
+    margin: 10px 0 15px;
+    padding:5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px 2px #ddd;  
+}
+
+input[type=number] {
+    width:70px;
+}
+
+input[type=radio] {
+    display: inline-block;
+    margin: 10px 0 25px;
+    padding:5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px 2px #ddd;  
+}
+
+input[type=submit],
+input[type=reset] {
+    padding:10px 15px;
+    background-color: #336699;
+    color:#eee;
+    border: 1px solid #еее;
+    border-radius:5px;
+    margin-right: 5px;
+}
+ 
+.button-container {
+    text-align: center;
+}
+ 
