@@ -15,7 +15,7 @@ public class Car {
     }
 
 
-    //get methods for reading
+    //get methods for reading -> get + enter | also adds public
     public String getBrand() {
         return brand;
     }
