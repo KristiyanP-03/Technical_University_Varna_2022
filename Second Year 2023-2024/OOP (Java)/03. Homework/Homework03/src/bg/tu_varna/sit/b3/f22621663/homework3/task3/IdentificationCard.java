@@ -18,14 +18,8 @@ public class IdentificationCard {
     public String getNumber() {
         return number;
     }
-    public int getYear() {
-        return year;
-    }
     public String getEgn() {
         return egn;
-    }
-    public City getCity() {
-        return city;
     }
 
 

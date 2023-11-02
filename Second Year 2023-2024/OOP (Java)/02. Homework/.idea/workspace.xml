@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5051d641-af61-493f-841b-fbd41b6081ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../03. Homework/Homework03/src/bg/tu_varna/sit/b3/f22621663/homework3/testprep/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task1/task1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task2/task2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task3/task3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task4/task4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task5/task5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03. Homework/Homework03/src/bg/tu_varna/sit/b3/f22621663/homework3/task3/IdentificationCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../03. Homework/Homework03/src/bg/tu_varna/sit/b3/f22621663/homework3/task3/IdentificationCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests/DogContest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tests/DogContest/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2XbjblYpvqVsZ89jdNl5PM76yGl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Repositories/Technical_University_Varna_2022/Second Year 2023-2024/OOP (Java)/02. Homework"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5051d641-af61-493f-841b-fbd41b6081ab" name="Changes" comment="" />
+      <created>1698904746848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698904746848</updated>
+    </task>
+    <servers />
+  </component>
+</project>
