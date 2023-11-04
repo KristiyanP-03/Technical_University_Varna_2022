@@ -1,6 +1,7 @@
 package bg.tu_varna.sit.testprep;
 
 import java.util.Arrays;
+
 public class Timsort {
     private static final int MIN_MERGE = 32;
     private int[] arr;
