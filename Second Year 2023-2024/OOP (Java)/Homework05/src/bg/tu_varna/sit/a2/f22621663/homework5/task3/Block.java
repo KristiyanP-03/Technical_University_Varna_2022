@@ -11,14 +11,14 @@ class Block extends Building {
     }
 
     @Override
-    public double calculateHeatedVolume() {
+    public double heatedVolume() {
         double apartmentArea = width * length;
-        double heatedVolume = 2.45 * apartmentArea * apartmentsPerEntrance * entrances * 0.9; // 10% deduction for unheated areas
+        double heatedVolume = 2.45 * apartmentArea * apartmentsPerEntrance * entrances * 0.9;
         return heatedVolume;
     }
 
     @Override
-    public double calculateTotalArea() {
+    public double totalArea() {
         double apartmentArea = width * length;
         return apartmentArea * apartmentsPerEntrance * entrances;
     }

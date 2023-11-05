@@ -11,14 +11,14 @@ class House extends Building {
     }
 
     @Override
-    public double calculateHeatedVolume() {
+    public double heatedVolume() {
         double floorArea = width * length;
-        double heatedVolume = floorArea * floors * height * 0.75; // 25% deduction for unheated areas
+        double heatedVolume = floorArea * floors * height * 0.75;
         return heatedVolume;
     }
 
     @Override
-    public double calculateTotalArea() {
+    public double totalArea() {
         double floorArea = width * length;
         return floorArea * floors;
     }

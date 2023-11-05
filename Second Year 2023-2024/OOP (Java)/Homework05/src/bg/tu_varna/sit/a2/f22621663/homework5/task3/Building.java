@@ -13,6 +13,6 @@ abstract class Building {
         this.height = height;
     }
 
-    public abstract double calculateHeatedVolume();
-    public abstract double calculateTotalArea();
+    public abstract double heatedVolume();
+    public abstract double totalArea();
 }
