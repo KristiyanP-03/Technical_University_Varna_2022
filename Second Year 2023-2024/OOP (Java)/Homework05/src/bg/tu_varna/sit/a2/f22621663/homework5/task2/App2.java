@@ -6,6 +6,8 @@ public class App2 {
         double damage = 400.0;
 
 
+
+
         defender.defend(damage);
 
         System.out.println("Резултат: живот: " + defender.life + ", броня: " + defender.armor + ", лечителско умение: " + defender.healingSkill);
