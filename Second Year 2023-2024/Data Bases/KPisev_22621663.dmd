@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="KPisev_22621663" id="AD080A23-FCB5-77F0-896A-0A130F473DD6" version="3.5">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 13:03:15 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>AD080A23-FCB5-77F0-896A-0A130F473DD6</designId>
+</OSDM_Design>
