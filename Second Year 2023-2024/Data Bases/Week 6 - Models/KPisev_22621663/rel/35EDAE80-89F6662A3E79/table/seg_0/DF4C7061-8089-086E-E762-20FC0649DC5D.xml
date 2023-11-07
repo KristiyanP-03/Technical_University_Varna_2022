@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DF4C7061-8089-086E-E762-20FC0649DC5D" name="Client - Buyer">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 13:59:30 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="purchase_id" id="7E10F7A1-A723-F542-6A17-248E1F0DED05">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:37:40 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="client_buyer_id" id="707D2B7B-0095-93B6-13DB-283E4F38F463">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:43:43 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C840CC15-A55C-B5C5-D9A3-C5940E067C4C" referredColumn="7717CA0D-9707-B0E8-A742-89E582388872"/>
+</associations>
+</Column>
+<Column name="car_buyer_id" id="5EE96026-508D-61AE-D732-418B3A3233F8">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:50:35 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2BD4F82B-8779-89F6-FEFA-915051CEAA26" referredColumn="BD71EA42-9552-ED30-9E40-C962702DD161"/>
+</associations>
+</Column>
+<Column name="employee_seller_id" id="0ABAD750-F341-4AEE-4EAC-C90AFB53705E">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:52:09 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="094484B1-F2CA-FD8E-C6AD-B5F6E229BD32" referredColumn="39C9905A-70B2-5B21-BF1C-C2AA0E8E84CB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26D8A71B-FA3D-B2C5-2F43-A38B9CFA1FB9" name="Client - Buyer_PK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:37:46 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E10F7A1-A723-F542-6A17-248E1F0DED05"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="648D5980-21BF-73C1-1681-87CEAD7B9B40" name="client_buyer_id">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:43:43 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="707D2B7B-0095-93B6-13DB-283E4F38F463"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE4D92EB-A8EB-942B-C4B5-AD2A93984F69" name="car_buyer_id">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:50:35 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EE96026-508D-61AE-D732-418B3A3233F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39A19767-DEBE-F3DC-6E4F-66A7F439DA20" name="Client - Buyer_Employee_FK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:52:08 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0ABAD750-F341-4AEE-4EAC-C90AFB53705E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

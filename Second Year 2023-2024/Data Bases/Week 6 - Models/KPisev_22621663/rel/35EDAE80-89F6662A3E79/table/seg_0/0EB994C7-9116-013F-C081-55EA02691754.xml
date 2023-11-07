@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0EB994C7-9116-013F-C081-55EA02691754" name="Employee">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 13:59:59 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employee_id" id="39C9905A-70B2-5B21-BF1C-C2AA0E8E84CB">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:41:29 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="433A446C-833E-8B72-6915-EFE582D47671">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:41:29 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="position" id="56E359BB-B8E2-46B6-C496-71F45380E360">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:41:29 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="352EA654-EA20-4C64-8750-CEABE8B2F19D">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:41:29 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DDD19479-C879-0E32-E0B7-82FEED6972A3" name="Employee_PK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:52:01 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39C9905A-70B2-5B21-BF1C-C2AA0E8E84CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

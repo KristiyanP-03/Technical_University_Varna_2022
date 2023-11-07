@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E2FCA7F4-0A09-DE4D-EC6C-A34E5EBBD64B" name="Car - model">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 13:59:00 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="model_id" id="87F35928-5870-1E8E-73F1-8A24C0D66076">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:04:02 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="марка" id="AE2FEEA3-78FD-0BDF-0F65-D7D8382CF4B9">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:04:19 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="55F11B5A-4C1F-B1DC-70A3-19466A889C20" name="Car - model_PK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:04:02 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87F35928-5870-1E8E-73F1-8A24C0D66076"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

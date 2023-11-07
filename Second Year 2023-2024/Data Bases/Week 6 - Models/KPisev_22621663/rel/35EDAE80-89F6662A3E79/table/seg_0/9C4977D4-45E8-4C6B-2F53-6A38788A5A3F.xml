@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9C4977D4-45E8-4C6B-2F53-6A38788A5A3F" name="Car">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:05:55 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="car_id" id="BD71EA42-9552-ED30-9E40-C962702DD161">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:06:27 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="car_brand_id" id="FB548EE1-EC81-C7E0-BF7F-0CB3AF171E86">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:09:27 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9226E2F9-CC44-4711-DD24-E0FC009D5EE9" referredColumn="D5B1F535-E85F-7FEC-A880-C898B6D84F8E"/>
+</associations>
+</Column>
+<Column name="car_model_id" id="907B9722-8712-64F7-3BD7-F78BE8AE2F89">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:34:01 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="01826604-5D84-ACA2-3560-B213D61F36A0" referredColumn="87F35928-5870-1E8E-73F1-8A24C0D66076"/>
+</associations>
+</Column>
+<Column name="car_color_id" id="02447493-EA1D-B0F1-5489-3ED805333EFA">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:35:43 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC50BF47-1AC6-5D58-C7A2-44A369A78D69" referredColumn="F804DAE8-3EBC-5528-F994-7711AC0B1421"/>
+</associations>
+</Column>
+<Column name="year" id="8F1740E8-C869-EE36-AE49-CF053B4D417F">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:08:41 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mileage" id="7A8560E1-150B-3CFC-C586-23FDF263AFCD">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:08:41 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="254C90CF-E31E-43A5-77B4-26D7B4E55240">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:08:57 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6DB29F92-ABB9-6D45-DB5D-9CEF608918A6" name="Car_PK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:06:27 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD71EA42-9552-ED30-9E40-C962702DD161"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F99FF2A6-BFA9-BF5F-07B5-9347C4B4222B" name="brand_id">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:09:27 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB548EE1-EC81-C7E0-BF7F-0CB3AF171E86"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E018533-331C-C06C-342F-E794F4A462CC" name="car_model_id">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:34:01 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="907B9722-8712-64F7-3BD7-F78BE8AE2F89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="003F95FB-F748-6D5F-F0CD-9CE2A00D0084" name="Car_Car - color_FK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:35:43 UTC</createdTime>
+<ownerDesignName>KPisev_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02447493-EA1D-B0F1-5489-3ED805333EFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
