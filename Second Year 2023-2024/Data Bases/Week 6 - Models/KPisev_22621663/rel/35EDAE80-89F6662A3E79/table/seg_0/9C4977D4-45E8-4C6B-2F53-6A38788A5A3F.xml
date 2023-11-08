@@ -18,34 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="car_brand_id" id="FB548EE1-EC81-C7E0-BF7F-0CB3AF171E86">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:09:27 UTC</createdTime>
-<ownerDesignName>KPisev_22621663</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT027</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="9226E2F9-CC44-4711-DD24-E0FC009D5EE9" referredColumn="D5B1F535-E85F-7FEC-A880-C898B6D84F8E"/>
-</associations>
-</Column>
-<Column name="car_model_id" id="907B9722-8712-64F7-3BD7-F78BE8AE2F89">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:34:01 UTC</createdTime>
-<ownerDesignName>KPisev_22621663</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT027</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="01826604-5D84-ACA2-3560-B213D61F36A0" referredColumn="87F35928-5870-1E8E-73F1-8A24C0D66076"/>
-</associations>
-</Column>
 <Column name="car_color_id" id="02447493-EA1D-B0F1-5489-3ED805333EFA">
 <createdBy>HP</createdBy>
 <createdTime>2023-11-07 14:35:43 UTC</createdTime>
@@ -105,26 +77,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="BD71EA42-9552-ED30-9E40-C962702DD161"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="F99FF2A6-BFA9-BF5F-07B5-9347C4B4222B" name="brand_id">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:09:27 UTC</createdTime>
-<ownerDesignName>KPisev_22621663</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="FB548EE1-EC81-C7E0-BF7F-0CB3AF171E86"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="0E018533-331C-C06C-342F-E794F4A462CC" name="car_model_id">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:34:01 UTC</createdTime>
-<ownerDesignName>KPisev_22621663</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="907B9722-8712-64F7-3BD7-F78BE8AE2F89"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="003F95FB-F748-6D5F-F0CD-9CE2A00D0084" name="Car_Car - color_FK">

@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="цвят" id="BAF6BCEA-C443-337B-A03D-45434F44D21C">
+<Column name="color_name" id="BAF6BCEA-C443-337B-A03D-45434F44D21C">
 <createdBy>HP</createdBy>
 <createdTime>2023-11-07 14:05:03 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
