@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="54F04B14-9847-15F5-31EC-0379391F97B2" name="Car - brand">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 13:58:36 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0E99BA2D-C19B-CA9B-993F-D913E379B28C" name="Brand - Model">
+<createdBy>DELL</createdBy>
+<createdTime>2023-11-08 15:48:11 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
-<ordsAlias>table_2</ordsAlias>
+<ordsAlias>table_8</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="brand_id" id="D5B1F535-E85F-7FEC-A880-C898B6D84F8E">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:01:52 UTC</createdTime>
+<Column name="model_id" id="FD7EB63A-96BA-222B-88A1-3DAFBDE69728">
+<createdBy>DELL</createdBy>
+<createdTime>2023-11-08 16:01:39 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -18,28 +18,29 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="марка" id="D9FAD569-D73C-4D6A-372F-82410F09FA9C">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:03:19 UTC</createdTime>
+<Column name="model_title" id="49B54CD3-B528-3444-CEC8-96CC220C0C7B">
+<createdBy>DELL</createdBy>
+<createdTime>2023-11-08 16:02:58 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="979E587C-2FB6-2D54-7CA0-B08933699451" name="Car - brand_PK">
-<createdBy>HP</createdBy>
-<createdTime>2023-11-07 14:02:41 UTC</createdTime>
+<ind_PK_UK id="A4373F57-B454-84B4-4062-857AE77F0082" name="Brand - Model_PK">
+<createdBy>DELL</createdBy>
+<createdTime>2023-11-08 16:01:39 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D5B1F535-E85F-7FEC-A880-C898B6D84F8E"/>
+<colUsage columnID="FD7EB63A-96BA-222B-88A1-3DAFBDE69728"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

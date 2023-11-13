@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC25B003-4D20-20B9-A84D-CBD37E92ADC8" name="Car - color">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC25B003-4D20-20B9-A84D-CBD37E92ADC8" name="Car - Color">
 <createdBy>HP</createdBy>
 <createdTime>2023-11-07 13:59:14 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="цвят" id="BAF6BCEA-C443-337B-A03D-45434F44D21C">
+<Column name="color_name" id="BAF6BCEA-C443-337B-A03D-45434F44D21C">
 <createdBy>HP</createdBy>
 <createdTime>2023-11-07 14:05:03 UTC</createdTime>
 <ownerDesignName>KPisev_22621663</ownerDesignName>

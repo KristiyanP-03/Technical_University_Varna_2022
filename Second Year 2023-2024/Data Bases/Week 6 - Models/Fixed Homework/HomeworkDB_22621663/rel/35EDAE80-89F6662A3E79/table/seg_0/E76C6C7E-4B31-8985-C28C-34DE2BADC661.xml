@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E76C6C7E-4B31-8985-C28C-34DE2BADC661" name="Client">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 13:59:50 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="client_id" id="7717CA0D-9707-B0E8-A742-89E582388872">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:39:12 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="E126AD1C-3C9D-71CD-E8BA-7918A074E268">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:39:44 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="437A3F6C-ED73-F8E4-5ED4-0A03456A0C0C">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:40:11 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="D32D2418-F72F-9E06-9922-14363EE743BC">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:40:11 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21484DF9-4C4A-8376-D570-DC911B5C4E18" name="Client_PK">
+<createdBy>HP</createdBy>
+<createdTime>2023-11-07 14:39:12 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7717CA0D-9707-B0E8-A742-89E582388872"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
