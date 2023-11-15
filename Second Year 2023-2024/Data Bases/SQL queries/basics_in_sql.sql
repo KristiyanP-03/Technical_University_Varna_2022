@@ -16,7 +16,7 @@ MODIFY emp_last_name VARCHAR(50);
 Create table positions(
     id_pos INT NOT NULL,
     pos_name VARCHAR(30),
-    Primary key(id_pos);)
+    Primary key(id_pos))
  
     Alter table employees
     ADD constraint FK_pos
