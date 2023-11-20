@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1d949e9-f21a-483c-888a-7a3b25cc46c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/Apartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/Property.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/kontrl3/test/Taxing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework06/src/bg/tu_varna/sit/a2/f22621663/zadzachasa/Employees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework06/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework06/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2YRnu8H7FMY89L63qf5xUaCXjE4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/DELL/Desktop/Repositories/Technical_University_Varna_2022/Second Year 2023-2024/OOP (Java)/06. Homework"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1d949e9-f21a-483c-888a-7a3b25cc46c4" name="Changes" comment="" />
+      <created>1700497479740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700497479740</updated>
+    </task>
+    <servers />
+  </component>
+</project>
