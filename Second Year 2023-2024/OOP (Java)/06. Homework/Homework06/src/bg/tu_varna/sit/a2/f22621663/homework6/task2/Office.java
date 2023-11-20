@@ -11,8 +11,6 @@ public class Office extends Property {
     }
 
 
-
-
     @Override
     public double calculateCommission(Property property) {
         if (isForRent()) {
