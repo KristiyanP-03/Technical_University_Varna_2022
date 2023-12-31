@@ -203,12 +203,12 @@ INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_i
 
 
 ---------------------------------------------------------------------------------------------------------- Корекция на данни
-DELETE FROM Car
-WHERE car_id IN (SELECT car_buyer_id FROM Sales WHERE date_of_sale < '2023-01-25');
+--DELETE FROM Car
+--WHERE car_id IN (SELECT car_buyer_id FROM Sales WHERE date_of_sale < '2023-01-25');
 
-DROP TABLE Car_Color;
+--DROP TABLE Car_Color;
 
-UPDATE Car_Brand SET brand_title = 'Toyota Updated' WHERE brand_id = 1;
+UPDATE Car_Brand SET brand_title = 'Toyota 2' WHERE brand_id = 1;
 
 UPDATE Brand_Model SET model_title = 'Civic SI' WHERE model_id = 2;
 
