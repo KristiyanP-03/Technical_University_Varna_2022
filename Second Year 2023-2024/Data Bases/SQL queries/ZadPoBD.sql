@@ -224,6 +224,10 @@ UPDATE Client SET address = '789 St' WHERE client_id = 3;
 
 UPDATE Sales SET date_of_sale = '2023-12-03' WHERE purchase_id = 3;
 
+DELETE FROM Sales WHERE car_buyer_id = 1;
+
+DELETE FROM Car WHERE car_id = 1;
+
 
 
 --------------------------------------------------------------------------------------------------------------- Справки
