@@ -1,33 +1,33 @@
-CREATE USER ProjectDB IDENTIFIED BY project;
-GRANT CONNECT TO ProjectDB;
-GRANT CONNECT SESSION TO ProjectDB;
-GRANT CREATE TABLE TO ProjectDB;
-GRANT UNLIMITED TABLESPACE TO ProjectDB;
+CREATE USER MyProjectDB IDENTIFIED BY projectdb;
+GRANT CONNECT TO MyProjectDB;
+GRANT CONNECT SESSION TO MyProjectDB;
+GRANT CREATE TABLE TO MyProjectDB;
+GRANT UNLIMITED TABLESPACE TO MyProjectDB;
 
 
 
 ------------------------------------------------------------------------------- Таблици
 CREATE TABLE Car (
     car_id INT PRIMARY KEY,
-    car_brand_id INT,
+    car_model_id INT,
     car_color_id INT,
     year INT,
     mileage INT,
     price DECIMAL(10, 2),
-    FOREIGN KEY (car_brand_id) REFERENCES Car_Brand(brand_id),
+    FOREIGN KEY (car_model_id) REFERENCES Brand_Model(model_id),
     FOREIGN KEY (car_color_id) REFERENCES Car_Color(color_id)
-);
-
-CREATE TABLE Car_Brand (
-    brand_id INT PRIMARY KEY,
-    brand_title VARCHAR(10),
-    brand_model_id INT,
-    FOREIGN KEY (brand_model_id) REFERENCES Brand_Model(model_id)
 );
 
 CREATE TABLE Brand_Model (
     model_id INT PRIMARY KEY,
-    model_title VARCHAR(10)
+    model_title VARCHAR(10),
+    brand_id INT,
+    FOREIGN KEY (brand_id) REFERENCES Car_Brand(brand_id)
+);
+
+CREATE TABLE Car_Brand (
+    brand_id INT PRIMARY KEY,
+    brand_title VARCHAR(10)
 );
 
 CREATE TABLE Car_Color (
@@ -68,203 +68,248 @@ CREATE TABLE Position_Employee (
 
 
 
-
 ------------------------------------------------------------------------------- Въвеждане на данни
 -- Car_Brand Table
-INSERT INTO Car_Brand (brand_id, brand_title, brand_model_id) VALUES
-(1, 'Toyota', 1);
-
-INSERT INTO Car_Brand (brand_id, brand_title, brand_model_id) VALUES
-(2, 'Honda', 2);
-
-INSERT INTO Car_Brand (brand_id, brand_title, brand_model_id) VALUES
-(3, 'Ford', 3);
-
-INSERT INTO Car_Brand (brand_id, brand_title, brand_model_id) VALUES
-(4, 'Mazda', 4);
-
-INSERT INTO Car_Brand (brand_id, brand_title, brand_model_id) VALUES
-(5, 'Infinity', 5);
+INSERT INTO Car_Brand (brand_id, brand_title) VALUES
+(1, 'Mazda');
+INSERT INTO Car_Brand (brand_id, brand_title) VALUES
+(2, 'Infinity');
+INSERT INTO Car_Brand (brand_id, brand_title) VALUES
+(3, 'BMW');
+INSERT INTO Car_Brand (brand_id, brand_title) VALUES
+(4, 'Mercedes');
+INSERT INTO Car_Brand (brand_id, brand_title) VALUES
+(5, 'Lambo');
 
 -- Brand_Model Table
-INSERT INTO Brand_Model (model_id, model_title) VALUES
-(1, 'Camry');
-
-INSERT INTO Brand_Model (model_id, model_title) VALUES
-(2, 'Civic');
-
-INSERT INTO Brand_Model (model_id, model_title) VALUES
-(3, 'Focus');
-
-INSERT INTO Brand_Model (model_id, model_title) VALUES
-(4, '323F BA');
-
-INSERT INTO Brand_Model (model_id, model_title) VALUES
-(5, 'QX70');
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(1, '323f BA', 1);
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(2, 'QX70', 2);
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(3, 'MX5', 1);
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(4, '630i', 3);
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(5, 'CLS 323', 4);
+INSERT INTO Brand_Model (model_id, model_title, brand_id) VALUES
+(6, 'Aventador', 5);
 
 -- Car_Color Table
-Select * From Car_Color;
-
 INSERT INTO Car_Color (color_id, color_name) VALUES
-(1, 'Red');
-
+(1, 'Green');
 INSERT INTO Car_Color (color_id, color_name) VALUES
-(2, 'Blue');
-
+(2, 'Black');
 INSERT INTO Car_Color (color_id, color_name) VALUES
-(3, 'Silver');
-
+(3, 'Red');
 INSERT INTO Car_Color (color_id, color_name) VALUES
-(4, 'Green');
-
+(4, 'White');
 INSERT INTO Car_Color (color_id, color_name) VALUES
-(5, 'Black');
+(5, 'Silver');
+INSERT INTO Car_Color (color_id, color_name) VALUES
+(6, 'Orange');
 
 -- Car Table
-INSERT INTO Car (car_id, car_brand_id, car_color_id, year, mileage, price) VALUES
-(1, 1, 1, 2020, 30000, 25000.00);
-
-INSERT INTO Car (car_id, car_brand_id, car_color_id, year, mileage, price) VALUES
-(2, 2, 2, 2019, 28000, 22000.50);
-
-INSERT INTO Car (car_id, car_brand_id, car_color_id, year, mileage, price) VALUES
-(3, 3, 3, 2021, 25000, 20000.75);
-
-INSERT INTO Car (car_id, car_brand_id, car_color_id, year, mileage, price) VALUES
-(4, 4, 4, 1998, 141000, 5000.75);
-
-INSERT INTO Car (car_id, car_brand_id, car_color_id, year, mileage, price) VALUES
-(5, 5, 5, 2007, 89000, 24000.75);
-
--- Position_Employee Table
-INSERT INTO Position_Employee (pos_id, position_name) VALUES
-(1, 'Sales Representative');
-
-INSERT INTO Position_Employee (pos_id, position_name) VALUES
-(2, 'Manager');
-
-INSERT INTO Position_Employee (pos_id, position_name) VALUES
-(3, 'Technician');
-
-INSERT INTO Position_Employee (pos_id, position_name) VALUES
-(4, 'Owner');
-
-INSERT INTO Position_Employee (pos_id, position_name) VALUES
-(5, 'Manager');
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(1, 1, 1, 1998, 141000, 2500.00);
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(2, 2, 2, 2007, 106000, 41000.00);
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(3, 3, 3, 2002, 162000, 3000.00);
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(4, 4, 4, 2007, 120000, 15000.00);
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(5, 5, 5, 2000, 110000, 12000.00);
+INSERT INTO Car (car_id, car_model_id, car_color_id, year, mileage, price) VALUES
+(6, 6, 6, 2001, 16000, 84000.00);
 
 -- Employee Table
 INSERT INTO Employee (employee_id, employee_pos_id, name, phone_number) VALUES
-(1, 1, 'John Doe', '3593590003');
-
+(1, 1, 'Иван Петров', '3590000011');
 INSERT INTO Employee (employee_id, employee_pos_id, name, phone_number) VALUES
-(2, 2, 'Jane Smith', '3593590009');
-
+(2, 2, 'Мария Иванова', '3590000012');
 INSERT INTO Employee (employee_id, employee_pos_id, name, phone_number) VALUES
-(3, 3, 'Bob Johnson', '3593590201');
+(3, 3, 'Георги Георгиев', '3590000013');
 
-INSERT INTO Employee (employee_id, employee_pos_id, name, phone_number) VALUES
-(4, 4, 'Will Smith', '3593593001');
-
-INSERT INTO Employee (employee_id, employee_pos_id, name, phone_number) VALUES
-(5, 5, 'Joe Johnson', '3593590071');
+-- Position_Employee Table
+INSERT INTO Position_Employee (pos_id, position_name) VALUES
+(1, 'Консултант');
+INSERT INTO Position_Employee (pos_id, position_name) VALUES
+(2, 'Мениджър');
+INSERT INTO Position_Employee (pos_id, position_name) VALUES
+(3, 'Техник');
 
 -- Client Table
 INSERT INTO Client (client_id, name, address, phone_number) VALUES
-(1, 'Alice Williams', '123 St, Cityville', '3593590002');
-
+(1, 'Стефан Стефанов', 'ул. Осма 1, София', '3590000014');
 INSERT INTO Client (client_id, name, address, phone_number) VALUES
-(2, 'Charlie Brown', '456 St, Townsville', '3593590005');
-
+(2, 'Анна Георгиева', 'ул. Девета 2, Пловдив', '3590000015');
 INSERT INTO Client (client_id, name, address, phone_number) VALUES
-(3, 'Eva Davis', '789 St, Villagetown', '3593590007');
-
-INSERT INTO Client (client_id, name, address, phone_number) VALUES
-(4, 'Donald Trump', '789', '3593590907');
-
-INSERT INTO Client (client_id, name, address, phone_number) VALUES
-(5, 'Arnold Brown', '423', '3593599907');
+(3, 'Николай Иванов', 'ул. Десета 3, Варна', '3590000016');
 
 -- Sales Table
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
-(1, 1, 1, 1, '2023-01-15');
-
+(4, 1, 4, 1, '2023-04-10');
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
-(2, 2, 2, 2, '2023-02-20');
-
+(5, 2, 5, 2, '2023-05-15');
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
-(3, 3, 3, 3, '2023-03-25');
-
+(6, 3, 1, 3, '2023-06-20');
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
-(4, 4, 4, 4, '2023-04-25');
-
+(7, 1, 2, 1, '2023-07-25');
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
-(5, 5, 5, 5, '2023-05-25');
+(8, 2, 3, 2, '2023-08-30');
 
 
 
 ---------------------------------------------------------------------------------------------------------- Корекция на данни
---DELETE FROM Car
---WHERE car_id IN (SELECT car_buyer_id FROM Sales WHERE date_of_sale < '2023-01-25');
+-- Car_Brand
+UPDATE Car_Brand SET brand_title = 'Toyota' WHERE brand_id = 1;
+DELETE FROM Car_Brand WHERE brand_id = 2;
 
---DROP TABLE Car_Color;
+-- Brand_Model
+UPDATE Brand_Model SET model_title = 'Camry' WHERE model_id = 1;
+DELETE FROM Brand_Model WHERE model_id = 2;
 
-UPDATE Car_Brand SET brand_title = 'Toyota 2' WHERE brand_id = 1;
+-- Car_Color
+UPDATE Car_Color SET color_name = 'Purple' WHERE color_id = 1;
+DELETE FROM Car_Color WHERE color_id = 2;
 
-UPDATE Brand_Model SET model_title = 'Civic SI' WHERE model_id = 2;
+-- Car
+UPDATE Car SET mileage = 155000 WHERE car_id = 1;
+DELETE FROM Car WHERE car_id = 2;
 
-UPDATE Car_Color SET color_name = 'Blue Updated' WHERE color_id = 2;
+-- Sales
+UPDATE Sales SET date_of_sale = '2023-09-10' WHERE purchase_id = 1;
+DELETE FROM Sales WHERE purchase_id = 3;
 
---ALTER TABLE Car ALTER COLUMN mileage SET DEFAULT 0; --- ALTER podchertava???
+-- Client
+UPDATE Client SET address = 'ул. Шеста 4, София' WHERE client_id = 1;
+DELETE FROM Client WHERE client_id = 2;
 
-UPDATE Position_Employee SET position_name = 'Senior Sales Representative' WHERE pos_id = 1;
+-- Employee
+UPDATE Employee SET phone_number = '3590000018' WHERE employee_id = 1;
+DELETE FROM Employee WHERE employee_id = 3;
 
-UPDATE Employee SET phone_number = '3593590066' WHERE employee_id = 1;
-
-UPDATE Client SET address = '789 St' WHERE client_id = 3;
-
-UPDATE Sales SET date_of_sale = '2023-12-03' WHERE purchase_id = 3;
-
-DELETE FROM Sales WHERE car_buyer_id = 1;
-
-DELETE FROM Car WHERE car_id = 1;
+-- Position_Employee
+UPDATE Position_Employee SET position_name = 'Support Specialist' WHERE pos_id = 1;
+DELETE FROM Position_Employee WHERE pos_id = 2;
 
 
 
 --------------------------------------------------------------------------------------------------------------- Справки
+--2. Търсене на автомобили по марка, модел, цвят, година, километри, цена
+SELECT
+    Car_Brand.brand_title,
+    Brand_Model.model_title AS brand_model,
+    Car_Color.color_name AS color,
+    Car.year,
+    Car.mileage,
+    Car.price
+FROM
+    Car
+JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+WHERE
+    Car_Brand.brand_title = 'Mazda'
+    AND Brand_Model.model_title = '323f BA'
+    AND Car_Color.color_name = 'Green'
+    AND Car.year = 1998
+    AND Car.mileage < 1000000
+    AND Car.price BETWEEN 1000.00 AND 20000.00;
 
+    
+
+-- 3.  
 -- продадени автомобили от служител, подредени по дата на продажба
-SELECT Sales.purchase_id, Car.car_id, Car.car_brand_id, Car.car_color_id, Car.year, Car.mileage, Car.price, 
-       Employee.name AS employee_name, Sales.date_of_sale
-FROM Sales
+SELECT
+    Car_Brand.brand_title,
+    Brand_Model.model_title AS brand_model,
+    Car_Color.color_name AS color,
+    Car.year,
+    Car.mileage,
+    Car.price,
+    Sales.date_of_sale,
+    Client.name AS buyer_name,
+    Employee.name AS seller_name
+FROM
+    Sales
 JOIN Car ON Sales.car_buyer_id = Car.car_id
+JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+JOIN Client ON Sales.client_buyer_id = Client.client_id
 JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
-ORDER BY Sales.date_of_sale DESC;
+ORDER BY
+    Sales.date_of_sale DESC;
 
 -- последните 5 продажби подредени по цена
 SELECT * FROM (
-    SELECT Sales.purchase_id, Car.car_id, Car.car_brand_id, Car.car_color_id, Car.year, Car.mileage, Car.price, 
-           Employee.name AS employee_name, Sales.date_of_sale
+    SELECT
+    Car_Brand.brand_title,
+    Brand_Model.model_title AS brand_model,
+    Car_Color.color_name AS color,
+    Car.year,
+    Car.mileage,
+    Car.price,
+    Sales.date_of_sale,
+    Client.name AS buyer_name,
+    Employee.name AS seller_name
     FROM Sales
     JOIN Car ON Sales.car_buyer_id = Car.car_id
+    JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+    JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+    JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+    JOIN Client ON Sales.client_buyer_id = Client.client_id
     JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
     ORDER BY Car.price DESC
 ) WHERE ROWNUM <= 5;
 
 -- закупени автомобили от клиент
-SELECT Sales.purchase_id, Car.car_id, Car.car_brand_id, Car.car_color_id, Car.year, Car.mileage, Car.price, 
-       Client.name AS client_name, Sales.date_of_sale
-FROM Sales
+SELECT
+    Car_Brand.brand_title,
+    Brand_Model.model_title AS brand_model,
+    Car_Color.color_name AS color,
+    Car.year,
+    Car.mileage,
+    Car.price,
+    Sales.date_of_sale,
+    Employee.name AS seller_name
+FROM
+    Sales
 JOIN Car ON Sales.car_buyer_id = Car.car_id
-JOIN Client ON Sales.client_buyer_id = Client.client_id
-WHERE Client.client_id = 1;
+JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
+WHERE
+    Sales.client_buyer_id = (SELECT client_id FROM Client WHERE name = 'Стефан Стефанов')
+ORDER BY
+    Sales.date_of_sale DESC;
 
 -- продажби за период
-SELECT Sales.purchase_id, Car.car_id, Car.car_brand_id, Car.car_color_id, Car.year, Car.mileage, Car.price, 
-       Employee.name AS employee_name, Sales.date_of_sale
-FROM Sales
+SELECT
+    Car_Brand.brand_title,
+    Brand_Model.model_title AS brand_model,
+    Car_Color.color_name AS color,
+    Car.year,
+    Car.mileage,
+    Car.price,
+    Sales.date_of_sale,
+    Client.name AS buyer_name,
+    Employee.name AS seller_name
+FROM
+    Sales
 JOIN Car ON Sales.car_buyer_id = Car.car_id
+JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+JOIN Client ON Sales.client_buyer_id = Client.client_id
 JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
-WHERE Sales.date_of_sale BETWEEN '2023-02-01' AND '2023-12-31'
-ORDER BY Sales.date_of_sale;
+WHERE
+    Sales.date_of_sale BETWEEN '2023-05-30' AND '2023-12-31'
+ORDER BY
+    Sales.date_of_sale DESC;
+
 
 
