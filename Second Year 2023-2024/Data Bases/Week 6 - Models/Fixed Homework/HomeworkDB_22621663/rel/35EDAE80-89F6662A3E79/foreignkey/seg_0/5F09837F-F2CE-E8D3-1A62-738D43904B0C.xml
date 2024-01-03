@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F8C9C7DD-6199-98E3-F482-34ABCC4C64BA" containerWithKeyObject="9C4977D4-45E8-4C6B-2F53-6A38788A5A3F" localFKIndex="4F7EF3F3-400E-B5E9-7D44-6AB26D5CDFCC" name="Car_Car - Brand_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5F09837F-F2CE-E8D3-1A62-738D43904B0C" containerWithKeyObject="0E99BA2D-C19B-CA9B-993F-D913E379B28C" localFKIndex="CFE0D8CE-D45A-D9FC-FCCC-9F18A548D260" name="Brand - Model_Car - Brand_FK">
 <createdBy>DELL</createdBy>
-<createdTime>2023-11-08 15:55:31 UTC</createdTime>
+<createdTime>2024-01-03 08:06:16 UTC</createdTime>
 <ownerDesignName>HomeworkDB_22621663</ownerDesignName>
 <referredTableLongName>Car - Brand</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

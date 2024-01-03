@@ -18,18 +18,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="car_brand_id" id="BBBE97E6-FAAC-6294-C4AF-5EED9FAB322F">
+<Column name="model_id" id="BC52A7D6-CB64-A802-1197-E0DFF70024F0">
 <createdBy>DELL</createdBy>
-<createdTime>2023-11-08 15:55:31 UTC</createdTime>
+<createdTime>2024-01-03 08:07:31 UTC</createdTime>
 <ownerDesignName>HomeworkDB_22621663</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F8C9C7DD-6199-98E3-F482-34ABCC4C64BA" referredColumn="2FC98817-F82D-C97C-10E8-CE0FCDCD148D"/>
+<colAssociation fkAssociation="BFB086FC-B63B-7EE7-E1A3-4357F3DEFEB3" referredColumn="FD7EB63A-96BA-222B-88A1-3DAFBDE69728"/>
 </associations>
 </Column>
 <Column name="car_color_id" id="02447493-EA1D-B0F1-5489-3ED805333EFA">
@@ -103,14 +102,14 @@
 <colUsage columnID="02447493-EA1D-B0F1-5489-3ED805333EFA"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="4F7EF3F3-400E-B5E9-7D44-6AB26D5CDFCC" name="Car_Car - Brand_FK">
+<ind_PK_UK id="3FE680F4-59A0-2991-E344-5FEC88EC705F" name="Car_Brand - Model_FK">
 <createdBy>DELL</createdBy>
-<createdTime>2023-11-08 15:55:31 UTC</createdTime>
+<createdTime>2024-01-03 08:08:51 UTC</createdTime>
 <ownerDesignName>HomeworkDB_22621663</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="BBBE97E6-FAAC-6294-C4AF-5EED9FAB322F"/>
+<colUsage columnID="BC52A7D6-CB64-A802-1197-E0DFF70024F0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

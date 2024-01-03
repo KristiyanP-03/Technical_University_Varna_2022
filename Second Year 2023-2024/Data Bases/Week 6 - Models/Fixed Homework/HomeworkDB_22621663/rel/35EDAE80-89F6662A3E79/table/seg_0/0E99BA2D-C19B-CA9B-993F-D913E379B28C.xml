@@ -30,6 +30,19 @@
 <ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="brand_id" id="4DD2FE4A-06DB-8C67-0117-487835F61A43">
+<createdBy>DELL</createdBy>
+<createdTime>2024-01-03 08:06:16 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F09837F-F2CE-E8D3-1A62-738D43904B0C" referredColumn="2FC98817-F82D-C97C-10E8-CE0FCDCD148D"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="A4373F57-B454-84B4-4062-857AE77F0082" name="Brand - Model_PK">
@@ -41,6 +54,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FD7EB63A-96BA-222B-88A1-3DAFBDE69728"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFE0D8CE-D45A-D9FC-FCCC-9F18A548D260" name="Brand - Model_Car - Brand_FK">
+<createdBy>DELL</createdBy>
+<createdTime>2024-01-03 08:06:16 UTC</createdTime>
+<ownerDesignName>HomeworkDB_22621663</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DD2FE4A-06DB-8C67-0117-487835F61A43"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
