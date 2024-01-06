@@ -158,6 +158,8 @@ INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_i
 (7, 1, 2, 1, '2023-07-25');
 INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
 (8, 2, 3, 2, '2023-08-30');
+INSERT INTO Sales (purchase_id, client_buyer_id, car_buyer_id, employee_seller_id, date_of_sale) VALUES
+(9, 2, 3, 2, '2023-11-30');
 
 
 
@@ -243,7 +245,7 @@ JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
 ORDER BY
     Sales.date_of_sale DESC;
 
--- последните 5 продажби подредени по цена
+-- последните 5 продажби подредени по цена  -- sort by date first
 SELECT * FROM (
     SELECT
     Car_Brand.brand_title,
@@ -262,10 +264,11 @@ SELECT * FROM (
     JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
     JOIN Client ON Sales.client_buyer_id = Client.client_id
     JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
+    ORDER BY Sales.date_of_sale DESC,
     ORDER BY Car.price DESC
 ) WHERE ROWNUM <= 5;
 
--- закупени автомобили от клиент
+-- закупени автомобили от клиент -- add client
 SELECT
     Car_Brand.brand_title,
     Brand_Model.model_title AS brand_model,
