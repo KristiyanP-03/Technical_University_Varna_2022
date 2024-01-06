@@ -245,30 +245,47 @@ JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
 ORDER BY
     Sales.date_of_sale DESC;
 
--- последните 5 продажби подредени по цена  -- sort by date first
-SELECT * FROM (
+-- последните 5 продажби подредени по цена
+SELECT
+    brand_title,
+    brand_model,
+    color,
+    year,
+    mileage,
+    price,
+    date_of_sale,
+    buyer_name,
+    seller_name
+FROM (
     SELECT
-    Car_Brand.brand_title,
-    Brand_Model.model_title AS brand_model,
-    Car_Color.color_name AS color,
-    Car.year,
-    Car.mileage,
-    Car.price,
-    Sales.date_of_sale,
-    Client.name AS buyer_name,
-    Employee.name AS seller_name
-    FROM Sales
+        Car_Brand.brand_title,
+        Brand_Model.model_title AS brand_model,
+        Car_Color.color_name AS color,
+        Car.year,
+        Car.mileage,
+        Car.price,
+        Sales.date_of_sale,
+        Client.name AS buyer_name,
+        Employee.name AS seller_name,
+        ROW_NUMBER() OVER (ORDER BY Sales.date_of_sale DESC) AS row_num
+    FROM
+        Sales
     JOIN Car ON Sales.car_buyer_id = Car.car_id
     JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
     JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
     JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
     JOIN Client ON Sales.client_buyer_id = Client.client_id
     JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
-    ORDER BY Sales.date_of_sale DESC,
-    ORDER BY Car.price DESC
-) WHERE ROWNUM <= 5;
+    ORDER BY
+        Sales.date_of_sale DESC
+)
+WHERE
+    row_num <= 5
+ORDER BY
+    price ASC;
+    
 
--- закупени автомобили от клиент -- add client
+-- закупени автомобили от клиент
 SELECT
     Car_Brand.brand_title,
     Brand_Model.model_title AS brand_model,
@@ -277,7 +294,8 @@ SELECT
     Car.mileage,
     Car.price,
     Sales.date_of_sale,
-    Employee.name AS seller_name
+    Employee.name AS seller_name,
+    Client.name AS buyer_name
 FROM
     Sales
 JOIN Car ON Sales.car_buyer_id = Car.car_id
@@ -285,10 +303,12 @@ JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
 JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
 JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
 JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
+JOIN Client ON Sales.client_buyer_id = Client.client_id
 WHERE
     Sales.client_buyer_id = (SELECT client_id FROM Client WHERE name = 'Стефан Стефанов')
 ORDER BY
     Sales.date_of_sale DESC;
+
 
 -- продажби за период
 SELECT
