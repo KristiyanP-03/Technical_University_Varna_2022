@@ -333,6 +333,23 @@ WHERE
     Sales.date_of_sale BETWEEN '2023-05-30' AND '2023-12-31'
 ORDER BY
     Sales.date_of_sale DESC;
+    
+-- всеки служител - коли в брой
+SELECT
+    Employee.name AS employee,
+    COUNT(Car.car_id) AS car_sold
+FROM
+    Sales
+JOIN Car ON Sales.car_buyer_id = Car.car_id
+JOIN Brand_Model ON Car.car_model_id = Brand_Model.model_id
+JOIN Car_Color ON Car.car_color_id = Car_Color.color_id
+JOIN Car_Brand ON Brand_Model.brand_id = Car_Brand.brand_id
+JOIN Employee ON Sales.employee_seller_id = Employee.employee_id
+JOIN Client ON Sales.client_buyer_id = Client.client_id
+GROUP BY
+    Employee.name
+ORDER BY
+    car_sold DESC;
 
 
 
