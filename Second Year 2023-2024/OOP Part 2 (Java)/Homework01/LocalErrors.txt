@@ -1,0 +1,4 @@
+Wrong code: I've entered wrong code!		The code was: BHMLYU
+Wrong code: I've entered wrong code again!		The code was: WOITSK
+Wrong code: I've entered wrong digits/letters code.		The code was: RYOYN8
+Wrong code: I've entered wrong digits only code.		The code was: 803737
