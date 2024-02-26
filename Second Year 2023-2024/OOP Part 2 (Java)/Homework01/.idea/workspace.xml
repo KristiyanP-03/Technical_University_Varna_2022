@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="940087bb-8fe8-418d-abf3-69fb6959204c" name="Changes" comment="Digits Only or Digits and letter verification code app is ready!" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2crWTQ9xOhkFd24RoZnjFWvRxEO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/DELL/Desktop/Repositories/Technical_University_Varna_2022/Second Year 2023-2024/OOP Part 2 (Java)/Homework01/src/bg/tu_varna/sit/а2/f22621663/Verification",
+    "onboarding.tips.debug.path": "C:/Users/DELL/Desktop/Repositories/Technical_University_Varna_2022/Second Year 2023-2024/OOP Part 2 (Java)/Homework01/src/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\Repositories\Technical_University_Varna_2022\Second Year 2023-2024\OOP Part 2 (Java)\Homework01\src\bg\tu_varna\sit\а2\f22621663\Verification" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="940087bb-8fe8-418d-abf3-69fb6959204c" name="Changes" comment="" />
+      <created>1708870188493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708870188493</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Digits Only or Digits and letter verification code app is ready!">
+      <option name="closed" value="true" />
+      <created>1708877605150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708877605150</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Digits Only or Digits and letter verification code app is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Digits Only or Digits and letter verification code app is ready!" />
+  </component>
+</project>
