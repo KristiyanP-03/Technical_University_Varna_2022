@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FiniteAutomataProject4:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FiniteAutomataProject4_jar</output-path>
+    <root id="archive" name="FiniteAutomataProject4.jar">
+      <element id="module-output" name="FiniteAutomataProject4" />
+    </root>
+  </artifact>
+</component>
