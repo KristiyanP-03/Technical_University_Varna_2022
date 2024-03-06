@@ -5,7 +5,7 @@ import java.io.IOException;
 
 class FileIO {
     private FileIO() {
-    }  // Private constructor to prevent instantiation
+    }
 
     static void writeToFile(File file, String content) throws IOException {
         try (java.io.FileWriter writer = new java.io.FileWriter(file)) {
