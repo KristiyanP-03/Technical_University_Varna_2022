@@ -1,0 +1,16 @@
+initwindow (300,800)
+setlinestyle (0,0,3);
+
+arc(400, 200, 135, 315, 1413; arc(400, 400, 45, 225, 141)
+arc (200, 400, 315, 135, 141);
+are(200, 200, 225, 45, 141):
+
+setfillstyle(1, GREEN);
+floodfill(300, 200, 15);
+setfillstyle (1, CYAN);
+floodfill(200, 300, 15);
+setfillstyle(1, BLUE);
+floodfill(200, 300, 15);
+setfillstyle(1, RED);
+floodfill(300, 400, 25);
+getch();

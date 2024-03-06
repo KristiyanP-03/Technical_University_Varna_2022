@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+=======
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
@@ -13,5 +18,6 @@ public class Main {
             // for you, but you can always add more by pressing Ctrl+F8.
             System.out.println("i = " + i);
         }
+>>>>>>> d4d8f16089af418c28a2b49c81943593f2416509
     }
 }
