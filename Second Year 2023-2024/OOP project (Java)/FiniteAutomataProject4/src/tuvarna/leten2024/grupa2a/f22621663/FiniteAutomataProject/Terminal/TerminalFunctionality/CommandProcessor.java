@@ -21,7 +21,18 @@ public class CommandProcessor {
                 new SaveCommand(),
                 new SaveAsCommand(),
                 new HelpCommand(),
-                new ExitCommand()
+                new ExitCommand(),
+
+                new ListCommand(),
+                new PrintCommand(),
+                new SaveAutomatonCommand(),
+                new EmptyCommand(),
+                new DeterministicCommand(),
+                new RecognizeCommand(),
+                new UnionCommand(),
+                new ConcatCommand(),
+                new PositiveWrapCommand(),
+                new RegularExpressionCommand()
         };
     }
 
