@@ -21,10 +21,7 @@ public class Dish {
         }
 
         public Dish build(){
-            Dish dish = new Dish();
-            this.name = name;
-            this.description = description;
-            return dish;
+            return new Dish();
         }
     }
 
