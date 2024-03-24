@@ -2,11 +2,8 @@ package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Comma
 
 import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.TerminalFunctionality.Command;
 
-
 import java.util.HashMap;
 import java.util.Map;
-
-
 
 public class RegularExpressionCommand implements Command {
     @Override
@@ -15,39 +12,47 @@ public class RegularExpressionCommand implements Command {
             System.out.println("Usage: reg <regex>");
             return;
         }
+
         String regex = args[0];
+        int state = 1;
+        int nextState = 2;
 
-        Map<Integer, Map<String, Integer>> transitions = new HashMap<>();
-        int currentState = 1;
-        transitions.put(currentState, new HashMap<>());
 
-        int previousState = 1;
+        Map<Integer, Map<Character, Integer>> transitions = new HashMap<>();
+
 
         for (int i = 0; i < regex.length(); i++) {
-            char c = regex.charAt(i);
-            int nextState = currentState + 1;
+            char letter = regex.charAt(i);
 
-            if (regex.charAt(i) == '*'){
+            if (i + 1 < regex.length() && regex.charAt(i + 1) == '*') {
+                nextState -= 1;
+            }
+
+            if (letter == '+') {
+                state = 1;
+                nextState -= 1;
                 continue;
             }
-            if (i < regex.length() - 1 && regex.charAt(i + 1) == '*') {
-                nextState--;
+
+            if (letter == '*') {
+                continue;
             }
 
-            transitions.putIfAbsent(nextState, new HashMap<>());
-            transitions.get(currentState).put(String.valueOf(c), nextState);
-            previousState = currentState;
-            currentState = nextState;
+
+            Map<Character, Integer> transitionMap = transitions.getOrDefault(state, new HashMap<>());
+            transitionMap.put(letter, nextState);
+            transitions.put(state, transitionMap);
+
+            state = nextState;
+            nextState++;
         }
 
-        System.out.println("Automaton created for regular expression " + regex + ":");
-        for (Map.Entry<Integer, Map<String, Integer>> entry : transitions.entrySet()) {
-            int fromState = entry.getKey();
-            Map<String, Integer> transitionMap = entry.getValue();
-            for (Map.Entry<String, Integer> transition : transitionMap.entrySet()) {
-                String symbol = transition.getKey();
-                int toState = transition.getValue();
-                System.out.println(fromState + "->" + symbol + "->" + toState);
+
+        for (int startState : transitions.keySet()) {
+            Map<Character, Integer> transitionMap = transitions.get(startState);
+            for (char input : transitionMap.keySet()) {
+                int endState = transitionMap.get(input);
+                System.out.println(startState + "->" + input + "->" + endState);
             }
         }
     }

@@ -7,4 +7,6 @@ public class Terminal {
         CommandProcessor commandProcessor = new CommandProcessor();
         commandProcessor.processInput();
     }
+
+
 }
