@@ -1,11 +1,13 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands;
-
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.TerminalFunctionality.Command;
-
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
 
 public class HelpCommand implements Command {
     @Override
-    public void functionality(String[] args) {
+    public void execute(String[] args) {
+        if (args.length != 0) {
+            System.out.println("ERROR! Expected command: help");
+        }
+
+
         System.out.println("The following commands are supported:");
 
         System.out.println("open <file> opens <file>");

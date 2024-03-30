@@ -1,16 +1,17 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.TerminalFunctionality.Command;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-public class RegularExpressionCommand implements Command {
+public class RegCommand implements Command {
+    private static final List<String> regexList = new ArrayList<>();
     @Override
-    public void functionality(String[] args) {
+    public void execute(String[] args) {
         if (args.length != 1) {
             System.out.println("Usage: reg <regex>");
-            return;
         }
 
         String regex = args[0];
@@ -47,6 +48,8 @@ public class RegularExpressionCommand implements Command {
             nextState++;
         }
 
+        System.out.println("Automaton created for regular expression " + regex + " with ID: " + transitions.hashCode());
+        regexList.add(regex);
 
         for (int startState : transitions.keySet()) {
             Map<Character, Integer> transitionMap = transitions.get(startState);
@@ -55,5 +58,8 @@ public class RegularExpressionCommand implements Command {
                 System.out.println(startState + "->" + input + "->" + endState);
             }
         }
+    }
+    public static List<String> getRegexList() {
+        return regexList;
     }
 }
