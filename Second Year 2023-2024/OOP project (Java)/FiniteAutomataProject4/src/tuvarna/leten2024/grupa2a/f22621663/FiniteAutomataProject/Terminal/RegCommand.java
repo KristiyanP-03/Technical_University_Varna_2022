@@ -12,6 +12,7 @@ public class RegCommand implements Command {
     public void execute(String[] args) {
         if (args.length != 1) {
             System.out.println("Usage: reg <regex>");
+            return;
         }
 
         String regex = args[0];
@@ -48,7 +49,8 @@ public class RegCommand implements Command {
             nextState++;
         }
 
-        System.out.println("Automaton created for regular expression " + regex + " with ID: " + transitions.hashCode());
+        int id = regexList.size();
+        System.out.println("Automaton created for regular expression " + regex + " with ID: " + id);
         regexList.add(regex);
 
         for (int startState : transitions.keySet()) {

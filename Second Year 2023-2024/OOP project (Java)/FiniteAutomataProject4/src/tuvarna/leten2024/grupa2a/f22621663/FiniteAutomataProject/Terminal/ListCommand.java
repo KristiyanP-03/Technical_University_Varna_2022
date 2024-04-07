@@ -12,7 +12,8 @@ public class ListCommand implements Command {
 
         System.out.println("Регистрирани регулярни изрази:");
         for (String regex : regexList) {
-            System.out.println(regex);
+            int id = regexList.indexOf(regex);
+            System.out.println("ID: " + id + ", Регекс: " + regex);
         }
     }
 }
