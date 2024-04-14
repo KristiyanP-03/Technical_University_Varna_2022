@@ -1,4 +1,6 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.App;
+
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.CommandExecutor;
 
 import java.util.Scanner;
 

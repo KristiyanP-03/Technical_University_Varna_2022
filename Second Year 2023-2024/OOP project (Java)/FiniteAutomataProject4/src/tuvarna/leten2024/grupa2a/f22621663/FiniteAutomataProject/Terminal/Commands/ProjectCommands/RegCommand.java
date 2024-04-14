@@ -1,6 +1,8 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
 
 
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;

@@ -1,4 +1,6 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
+
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
 
 public class PrintCommand implements Command {
     @Override
