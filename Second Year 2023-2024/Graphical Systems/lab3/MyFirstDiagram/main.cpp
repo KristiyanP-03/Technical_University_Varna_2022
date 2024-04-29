@@ -1,92 +1,70 @@
 #include <graphics.h>
-#include <iostream>
-using namespace std;
+#include <cmath>
 
 int main() {
-    // Задаване на входните данни - двойки стойности реални числа
-    float x[] = {-5, 12, 78, -23, 34, -10, 65, 30, 44}, temp;
-    float y[] = {40, -10, 70, 80, 90, 40, -22, 12, 30};
-    int n = sizeof(x) / sizeof(x[0]); // Определяне на броя на входните данни
-    int i, j;
-    int winwidth = 800, winheight = 600; // Параметри на прозореца на графичната система
-    int Px = 500, Py = 400, Dx = 50, Dy = 40, x0 = 100, y0 = 450; // Параметри на графичния прозорец
+    int x0 = 50, y0 = 600, Px = 600, Py = 500, Dx = 60, Dy = 100;
 
-    // Сортиране на входните данни, в случай, че те са експериментални
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n - i - 1; j++) {
-            if (x[j] > x[j + 1]) {
-                temp = x[j];
-                x[j] = x[j + 1];
-                x[j + 1] = temp;
-                temp = y[j];
-                y[j] = y[j + 1];
-                y[j + 1] = temp;
-            }
-        }
-    }
+    initwindow(1000, 800);
 
-    // Намиране на диапазона на изменение на входните данни - xmin, xmax, ymin, ymax
-    // След сортирането xmin и xmax са съответно първия и последен елемент от масива x
-    float xmin = x[0];
-    float xmax = x[n - 1];
-    // Намиране на ymin и ymax
-    float ymin = y[0];
-    float ymax = y[0];
+    float x_values[] = {-10, -3, 12, 20, 24, 32, 41, 48, 55, 63};
+    float y_values[] = {13, 20, -6, 7, 18, 5, 23, 10, -3, 2};
+
+    int n = sizeof(x_values) / sizeof(x_values[0]); // Определяне на броя на данните
+
+    // Изчертаване на осите
+    line(x0, y0, x0 + Px, y0); // хоризонтална ос
+    line(x0, y0, x0, y0 - Py); // вертикална ос
+
+    // Минимални и максимални стойности за x и y
+    float xmin = x_values[0], xmax = x_values[9];
+    float ymin = y_values[2], ymax = y_values[4];
     for (int i = 1; i < n; i++) {
-        if (y[i] < ymin) ymin = y[i];
-        if (y[i] > ymax) ymax = y[i];
-    }
 
-    // Определяне на скалните коефициенти
+
+    // Скаларни коефициенти
     float sx = (xmax - xmin) / Px;
     float sy = (ymax - ymin) / Py;
 
-    // Инициализация на графичната система чрез отваряне на графичен прозорец със зададен размер
-    initwindow(winwidth, winheight);
+    // Брой деления по хоризонталната и вертикалната ос
+    int Ip = abs(Px / Dx);
+    int Jp = abs(Py / Dy);
 
-    // Изчертаване на графичния прозорец
-    line(x0, y0, x0 + Px, y0); // Хоризонтална ос
-    line(x0, y0, x0, y0 - Py); // Вертикална ос
-
-    // Изчертаване на деленията по хоризонталната ос
-    int Ip = Px / Dx;
-    for (i = 1; i <= Ip; i++) {
-        line(x0 + i * Dx, y0, x0 + i * Dx, y0 + 3); // Изчертаване на деленията
+    // Надписване на деленията на хоризонталната ос
+    for (int i = 0; i <= Ip; i++) {
         char text[10];
-        gcvt(xmin + i * Dx * sx, 5, text); // Преобразуване на реалната стойност в символен низ
+        line(x0 + i * Dx, y0, x0 + i * Dx, y0 + 3);
+        gcvt(xmin + i * Dx * sx, 5, text);
         settextjustify(1, 2);
-        outtextxy(x0 + i * Dx, y0 + 5, text); // Извеждане на стойността, съответстваща на делението
+        outtextxy(x0 + i * Dx, y0 + 5, text);
     }
 
-    // Изчертаване на деленията по вертикалната ос
-    int Jp = Py / Dy;
-    for (i = 1; i <= Jp; i++) {
-        line(x0, y0 - i * Dy, x0 - 3, y0 - i * Dy); // Изчертаване на деленията
+    // Надписване на деленията на вертикалната ос
+    for (int j = 0; j <= Jp; j++) {
         char text[10];
-        gcvt(ymin + i * Dy * sy, 5, text); // Преобразуване на реалната стойност в символен низ
+        line(x0, y0 - j * Dy, x0 - 3, y0 - j * Dy);
+        gcvt(ymin + j * Dy * sy, 5, text);
         settextjustify(2, 1);
-        outtextxy(x0 - 10, y0 - Dy * i + 5, text); // Извеждане на стойността, съответстваща на делението
+        outtextxy(x0 - 10, y0 - j * Dy, text);
     }
 
-    // Преобразуване на входните данни в координати на пиксели, които се използват за центрове на
-    // окръжности с радиус 3 пиксела
-    for (i = 0; i < n; i++) {
-        int xprim = x0 + (x[i] - xmin) / sx;
-        int yprim = y0 - (y[i] - ymin) / sy;
-        circle(xprim, yprim, 3);
+    // Преобразуване на входните данни в координати на пиксели и изобразяване на точките
+    for (int i = 0; i < n; i++) {
+        int xprim = x0 + (x_values[i] - xmin) / sx;
+        int yprim = y0 - (y_values[i] - ymin) / sy;
+        circle(xprim, yprim, 2);
     }
 
-    // Свързване на окръжностите с отсечки и получаване на 2D графика, съответстваща на входните
-    // данни x,y
-    for (i = 0; i < n - 1; i++) {
-        int xa = x0 + (x[i] - xmin) / sx;
-        int ya = y0 - (y[i] - ymin) / sy;
-        int xb = x0 + (x[i + 1] - xmin) / sx;
-        int yb = y0 - (y[i + 1] - ymin) / sy;
-        line(xa, ya, xb, yb);
+    // Свързване на точките с отсечки
+    for (int i = 0; i < n - 1; i++) {
+        int x1 = x0 + (x_values[i] - xmin) / sx;
+        int y1 = y0 - (y_values[i] - ymin) / sy;
+        int x2 = x0 + (x_values[i + 1] - xmin) / sx;
+        int y2 = y0 - (y_values[i + 1] - ymin) / sy;
+        line(x1, y1, x2, y2);
     }
+
+
 
     getch();
     return 0;
 }
-

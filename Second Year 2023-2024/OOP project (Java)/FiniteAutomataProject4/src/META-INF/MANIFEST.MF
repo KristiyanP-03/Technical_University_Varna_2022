@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Te
- rminal.Terminal
-
