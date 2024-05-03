@@ -1,4 +1,4 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.FileCommands;
 
 import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
 

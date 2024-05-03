@@ -1,6 +1,7 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.FileCommands;
 
 import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands.RegCommand;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class SaveCommand implements Command {
             String regex = regexList.get(index);
             try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
                 writer.println(regex);
-                System.out.println("Automaton saved successfully to " + filename);
+                System.out.println("Automaton saved successfully to " + filename + ".txt");
             } catch (IOException e) {
                 System.out.println("Error saving automaton to file: " + e.getMessage());
             }
