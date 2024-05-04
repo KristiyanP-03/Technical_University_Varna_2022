@@ -33,6 +33,13 @@ public class RegCommand implements Command {
 
 
         String regex = args[0];
+        if (regex.equals("emptyreg")) {
+            regex = "&";
+        } else if (!regex.matches("[a-zA-Z*+]+")) {
+            System.out.println("Invalid regex. It should contain only letters, '*' or '+'!");
+            return;
+        }
+
         int state = 1;
         int nextState = 2;
 
@@ -42,8 +49,10 @@ public class RegCommand implements Command {
         for (int i = 0; i < regex.length(); i++) {
             char letter = regex.charAt(i);
 
-
-            if (i + 1 < regex.length() && regex.charAt(i + 1) == '*') {
+            if (letter == '&') {
+                transitions.computeIfAbsent(state, k -> new HashMap<>()).computeIfAbsent(letter, k -> new ArrayList<>()).add(state);
+                i++;
+            } else if (i + 1 < regex.length() && regex.charAt(i + 1) == '*') {
                 transitions.computeIfAbsent(state, k -> new HashMap<>()).computeIfAbsent(letter, k -> new ArrayList<>()).add(state);
                 i++;
             } else if (letter == '+') {
