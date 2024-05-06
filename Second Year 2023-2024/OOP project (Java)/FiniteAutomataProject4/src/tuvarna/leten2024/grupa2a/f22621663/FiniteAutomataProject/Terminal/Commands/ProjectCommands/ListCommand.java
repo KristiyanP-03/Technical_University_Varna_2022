@@ -6,6 +6,11 @@ import java.util.List;
 public class ListCommand implements Command {
     @Override
     public void execute(String[] args) {
+        if (args.length != 0) {
+            System.out.println("Usage: list");
+            return;
+        }
+
         List<String> regexList = RegCommand.getRegexList();
 
         if (regexList.isEmpty()) {

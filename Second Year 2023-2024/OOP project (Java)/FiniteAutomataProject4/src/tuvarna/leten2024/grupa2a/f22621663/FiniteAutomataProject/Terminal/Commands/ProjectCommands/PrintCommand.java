@@ -4,12 +4,7 @@ import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel
 
 import java.util.Map;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
 import java.util.List;
-
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
-import java.util.List;
-import java.util.Map;
 
 public class PrintCommand implements Command {
     @Override

@@ -6,13 +6,17 @@ import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Comman
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class CommandExecutor {
     private final Map<String, Command> commandMap;
+
 
     public CommandExecutor() {
         commandMap = new HashMap<>();
         initializeCommands();
     }
+
+
 
     private void initializeCommands() {
         commandMap.put("open", new OpenCommand());
@@ -32,12 +36,15 @@ public class CommandExecutor {
         commandMap.put("un", new UnCommand());
     }
 
+
+
     public void executeCommand(String command, String[] args) {
         Command cmd = commandMap.get(command);
         if (cmd == null) {
             System.out.println("Невалидна команда.");
             return;
         }
+
 
         cmd.execute(args);
     }

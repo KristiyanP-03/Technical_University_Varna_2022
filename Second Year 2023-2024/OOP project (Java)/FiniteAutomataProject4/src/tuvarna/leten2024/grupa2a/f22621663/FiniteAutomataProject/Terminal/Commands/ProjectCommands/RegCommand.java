@@ -22,6 +22,11 @@ public class RegCommand implements Command {
         }
     }
 
+    public static void setRegexList(List<String> uniqueRegexes) {
+        regexList.clear();
+        regexList.addAll(uniqueRegexes);
+    }
+
 
     @Override
     public void execute(String[] args) {

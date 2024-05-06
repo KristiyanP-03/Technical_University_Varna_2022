@@ -7,16 +7,34 @@ public class HelpCommand implements Command {
     public void execute(String[] args) {
         if (args.length != 0) {
             System.out.println("ERROR! Expected command: help");
+            return;
         }
 
+        StringBuilder helpMessage = new StringBuilder("The following commands are supported:\n\n");
 
-        System.out.println("The following commands are supported:");
+        helpMessage.append("open <file> opens <file>\n");
+        helpMessage.append("close closes currently opened file\n");
+        helpMessage.append("save saves the currently open file\n");
+        helpMessage.append("saveas <file> saves the currently open file in <file>\n");
+        helpMessage.append("help prints this information\n");
+        helpMessage.append("exit exists the program\n\n");
 
-        System.out.println("open <file> opens <file>");
-        System.out.println("close closes currently opened file");
-        System.out.println("save saves the currently open file");
-        System.out.println("saveas <file> saves the currently open file in <file>");
-        System.out.println("help prints this information");
-        System.out.println("exit exists the program");
+        helpMessage.append("list Списък с идентификаторите на всички прочетени автомати\n");
+        helpMessage.append("print <id> Извежда информация за всички преходи в автомата\n");
+        helpMessage.append("save <id> <filename> Записва автомат във файл\n");
+        helpMessage.append("empty <id> Проверява дали езикът на автомата е празен\n");
+        helpMessage.append("deterministic <id> Проверява дали автомат е детерминиран\n");
+        helpMessage.append("recognize <id> <word> Проверява дали дадена дума е в езика на автомата\n");
+        helpMessage.append("union <id1> <id2> Намира обединението на два автомата и създава нов автомат.\n");
+        helpMessage.append("Отпечатва идентификатора на новия автомат\n");
+        helpMessage.append("concat <id1> <id2> Намира конкатенацията на два автомата и създава нов автомат.\n");
+        helpMessage.append("Отпечатва идентификатора на новия автомат\n");
+        helpMessage.append("un <id> Намира позитивна обвивка на автомат и създава нов автомат.\n");
+        helpMessage.append("Отпечатва идентификатора на новия автомат\n");
+        helpMessage.append("reg <regex> Създава нов автомат по даден регулярен израз (теорема на Клини).\n");
+        helpMessage.append("Отпечатва идентификатора на новия автомат\n");
+
+        System.out.println(helpMessage);
     }
 }
+

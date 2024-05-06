@@ -15,7 +15,7 @@ public class ExitCommand implements Command {
             return;
         }
 
-        System.out.println("Exiting...");
+        System.out.println("Exiting the program...");
         System.exit(0);
     }
 }
