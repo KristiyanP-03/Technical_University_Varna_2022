@@ -1,0 +1,3 @@
+﻿  Project1.cpp
+C:\Users\DELL\Desktop\Repositories\Technical_University_Varna_2022\Second Year 2023-2024\Programing Systems\lab9\Project1\Project1\Project1.cpp(150,24): error C3861: 'LenOfLine': identifier not found
+C:\Users\DELL\Desktop\Repositories\Technical_University_Varna_2022\Second Year 2023-2024\Programing Systems\lab9\Project1\Project1\Project1.cpp(152,17): error C3861: 'StringCbPrintf': identifier not found
