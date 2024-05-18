@@ -4,11 +4,20 @@ import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel
 
 import java.util.Scanner;
 
+/**
+ * Класът Main е входната точка на приложението.
+ * Инициализира CommandExecutor и обработва входа от потребителя, за да изпълнява команди.
+ */
 public class Main {
+    /**
+     * Главният метод на приложението. Чете вход от потребителя, обработва команди
+     * и ги изпълнява чрез CommandExecutor.
+     *
+     * @param args Командни аргументи (не се използват).
+     */
     public static void main(String[] args) {
         CommandExecutor executor = new CommandExecutor();
         Scanner scanner = new Scanner(System.in);
-
 
         String input;
         do {
@@ -24,3 +33,4 @@ public class Main {
         System.out.println("Програмата приключи.");
     }
 }
+
