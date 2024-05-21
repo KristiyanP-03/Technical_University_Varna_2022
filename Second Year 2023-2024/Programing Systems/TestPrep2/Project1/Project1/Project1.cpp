@@ -24,6 +24,7 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    MyF(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK    Tst(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -145,6 +146,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             case ID_NEW_DI:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_DIALOG1), hWnd, MyF);
                 break;
+            case ID_TEST_TEST:
+                DialogBox(hInst, MAKEINTRESOURCE(IDD_DIALOG2), hWnd, Tst);
+                break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
                 break;
@@ -158,44 +162,61 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hWnd, &ps);
 
-        // Define the coordinates of the square's corners
-        int x1 = 120, y1 = 100; // Top-left corner
-        int x2 = 220, y2 = 100; // Top-right corner
-        int x3 = 200, y3 = 200; // Bottom-right corner
-        int x4 = 100, y4 = 200; // Bottom-left corner
 
-        // Draw the first square
+        int x1 = 120, y1 = 100; 
+        int x2 = 220, y2 = 100; 
+        int x3 = 200, y3 = 200; 
+        int x4 = 100, y4 = 200; 
+
+
         MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2); // Draw top side
-        LineTo(hdc, x3, y3); // Draw right side
-        LineTo(hdc, x4, y4); // Draw bottom side
-        LineTo(hdc, x1, y1); // Draw left side
+        LineTo(hdc, x2, y2);
+        LineTo(hdc, x3, y3); 
+        LineTo(hdc, x4, y4);
+        LineTo(hdc, x1, y1); 
 
-        // Define the coordinates of the second square's corners
-        int x5 = 80, y5 = 50;  // Top-left corner
-        int x6 = 120, y6 = 100; // Top-right corner
-        int x7 = 100, y7 = 200; // Bottom-right corner
-        int x8 = 60, y8 = 150;   // Bottom-left corner
+ 
+        int x5 = 80, y5 = 50;  
+        int x6 = 120, y6 = 100; 
+        int x7 = 100, y7 = 200;
+        int x8 = 60, y8 = 150;   
 
-        // Draw the second square
+
         MoveToEx(hdc, x5, y5, NULL);
-        LineTo(hdc, x6, y6); // Draw top side
-        LineTo(hdc, x7, y7); // Draw right side
-        LineTo(hdc, x8, y8); // Draw bottom side
-        LineTo(hdc, x5, y5); // Draw left side
+        LineTo(hdc, x6, y6);
+        LineTo(hdc, x7, y7); 
+        LineTo(hdc, x8, y8); 
+        LineTo(hdc, x5, y5); 
 
-        // Define the coordinates of the third square's corners
-        int x9 = 220, y9 = 100;  // Top-left corner
-        int x10 = 320, y10 = 100; // Top-right corner
-        int x11 = 300, y11 = 200; // Bottom-right corner
-        int x12 = 200, y12 = 200; // Bottom-left corner
 
-        // Draw the third square
+        int x9 = 220, y9 = 100;  
+        int x10 = 280, y10 = 60; 
+        int x11 = 270, y11 = 150;
+        int x12 = 200, y12 = 200;
+
+
         MoveToEx(hdc, x9, y9, NULL);
-        LineTo(hdc, x10, y10); // Draw top side
-        LineTo(hdc, x11, y11); // Draw right side
-        LineTo(hdc, x12, y12); // Draw bottom side
-        LineTo(hdc, x9, y9);   // Draw left side
+        LineTo(hdc, x10, y10);
+        LineTo(hdc, x11, y11); 
+        LineTo(hdc, x12, y12);
+        LineTo(hdc, x9, y9);
+
+        MoveToEx(hdc, x5, y5, NULL);
+        LineTo(hdc, 180, 30);
+        LineTo(hdc, x10, y10);
+
+        HPEN hPen = CreatePen(PS_DOT, 1, RGB(0, 0, 0));
+        HPEN hOldPen = (HPEN)SelectObject(hdc, hPen);
+
+        MoveToEx(hdc, 180, 30, NULL);
+        LineTo(hdc, 170, 120);
+
+        MoveToEx(hdc, 170, 120, NULL);
+        LineTo(hdc, x8, y8);
+
+        MoveToEx(hdc, 170, 120, NULL);
+        LineTo(hdc, x11, y11);
+
 
         EndPaint(hWnd, &ps);
     }
@@ -230,20 +251,119 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     return (INT_PTR)FALSE;
 }
 
+INT_PTR CALLBACK Tst(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    UNREFERENCED_PARAMETER(lParam);
+    switch (message)
+    {
+    case WM_INITDIALOG:
+        return (INT_PTR)TRUE;
+
+    case WM_COMMAND: {
+        int wmId = LOWORD(wParam);
+        int index;
+        WCHAR szText[MAX_LOADSTRING];
+        WCHAR szText2[MAX_LOADSTRING];
+        WCHAR szF1[MAX_LOADSTRING];
+
+
+        switch (wmId) {
+        case IDC_BUTTON1: {
+            BOOL bTranslated;
+            GetDlgItemInt(hDlg, IDC_EDIT1, &bTranslated, TRUE);
+            GetDlgItemText(hDlg, IDC_EDIT1, szText, MAX_LOADSTRING);
+            if (bTranslated) {
+                index = (int)SendDlgItemMessage(hDlg, IDC_LIST2, LB_FINDSTRING, (WPARAM)NULL, (LPARAM)szText);
+                if (index != LB_ERR) {
+                    MessageBox(hDlg, L"Number already present.", L"Error", MB_OK | MB_ICONERROR);
+                }
+                else {
+                    SendDlgItemMessage(hDlg, IDC_LIST2, LB_INSERTSTRING, NULL, (LPARAM)szText);
+                }
+            }
+            else
+                MessageBox(hDlg, L"Please enter a valid number.", L"Error", MB_OK | MB_ICONERROR);
+            break;
+        }
+        case IDC_BUTTON2: {
+            BOOL bTranslated;
+            GetDlgItemInt(hDlg, IDC_EDIT1, &bTranslated, TRUE);
+            GetDlgItemText(hDlg, IDC_EDIT1, szText, MAX_LOADSTRING);
+            if (bTranslated) {
+                index = (int)SendDlgItemMessage(hDlg, IDC_LIST1, LB_FINDSTRING, (WPARAM)NULL, (LPARAM)szText);
+                if (index != LB_ERR) {
+                    MessageBox(hDlg, L"Number already present.", L"Error", MB_OK | MB_ICONERROR);
+                }
+                else {
+                    SendDlgItemMessage(hDlg, IDC_LIST1, LB_INSERTSTRING, NULL, (LPARAM)szText);
+                }
+            }
+            else
+                MessageBox(hDlg, L"Please enter a valid number.", L"Error", MB_OK | MB_ICONERROR);
+            break;
+        }
+        case IDC_BUTTON3: {
+            index = SendDlgItemMessage(hDlg, IDC_LIST1, LB_GETCURSEL, (WPARAM)NULL, (LPARAM)NULL);
+            if (index != LB_ERR) {
+                index = SendDlgItemMessage(hDlg, IDC_LIST1, LB_GETTEXT, (WPARAM)index, (LPARAM)szText);
+            }
+            else {
+                MessageBox(hDlg, L"Select an option", L"Error", MB_OK | MB_ICONERROR);
+                break;
+            }
+            index = SendDlgItemMessage(hDlg, IDC_LIST2, LB_GETCURSEL, (WPARAM)NULL, (LPARAM)NULL);
+            if (index != LB_ERR) {
+                index = SendDlgItemMessage(hDlg, IDC_LIST2, LB_GETTEXT, (WPARAM)index, (LPARAM)szText2);
+            }
+            else {
+                MessageBox(hDlg, L"Select an option", L"Error", MB_OK | MB_ICONERROR);
+                break;
+            }
+            int F1;
+            int F2 = _wtoi(szText2);
+            int F3 = _wtoi(szText);
+
+            BOOL bTranslated;
+
+            GetDlgItemInt(hDlg, IDC_EDIT1, &bTranslated, TRUE);
+            GetDlgItemText(hDlg, IDC_EDIT1, szF1, MAX_LOADSTRING);
+            if (bTranslated)
+                F1 = _wtoi(szF1);
+            else {
+                MessageBox(hDlg, L"Please enter a valid number.", L"Error", MB_OK | MB_ICONERROR);
+                break;
+            }
+            if (IsDlgButtonChecked(hDlg, IDC_CHECK1) == BST_CHECKED && IsDlgButtonChecked(hDlg, IDC_CHECK2) == BST_CHECKED && IsDlgButtonChecked(hDlg, IDC_CHECK3) == BST_CHECKED)
+                SetDlgItemInt(hDlg, IDC_EDIT2, (F1 / (F2 + F3)), TRUE);
+            else
+                MessageBox(hDlg, L"Check Boxes F1,F2 and F3", L"Error", MB_OK | MB_ICONERROR);
+            break;
+        }
+
+
+        case IDOK:
+        case IDCANCEL:
+            EndDialog(hDlg, LOWORD(wParam));
+            return (INT_PTR)TRUE;
+        }
+    }
+    }
+    return (INT_PTR)FALSE;
+}
 
 INT_PTR CALLBACK MyF(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
     UNREFERENCED_PARAMETER(lParam);
     static UINT_PTR nTimerID = 0;
-    static int iProgress = 10; // Initialize progress to 10
+    static int iProgress = 10; 
 
     switch (message)
     {
     case WM_INITDIALOG:
-        // Set the range of the progress control to 0-10
+
         SendDlgItemMessage(hDlg, IDC_PROGRESS1, PBM_SETRANGE32, 0, 10);
 
-        // Set the initial position of the progress control to 10 (full)
+
         SendDlgItemMessage(hDlg, IDC_PROGRESS1, PBM_SETPOS, 10, 0);
         return (INT_PTR)TRUE;
 
@@ -252,18 +372,18 @@ INT_PTR CALLBACK MyF(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         int wmId = LOWORD(wParam);
         switch (wmId)
         {
-        case IDC_BUTTON4: // Start timer
-            if (nTimerID == 0) // If timer is not already running
+        case IDC_BUTTON4: 
+            if (nTimerID == 0)
             {
-                nTimerID = SetTimer(hDlg, 1, 1000, NULL); // Start the timer for 1 sec interval
+                nTimerID = SetTimer(hDlg, 1, 1000, NULL); 
             }
             break;
 
-        case IDC_BUTTON5: // Stop timer
-            if (nTimerID != 0) // If the timer is running
+        case IDC_BUTTON5: 
+            if (nTimerID != 0) 
             {
-                KillTimer(hDlg, nTimerID); // Stop the timer
-                nTimerID = 0; // Reset the timer ID
+                KillTimer(hDlg, nTimerID);
+                nTimerID = 0;
             }
             break;
         }
@@ -271,28 +391,27 @@ INT_PTR CALLBACK MyF(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     }
     case WM_TIMER:
     {
-        if (wParam == 1) // If the timer ID matches
+        if (wParam == 1) 
         {
-            // Decrease progress
+
             iProgress--;
-            if (iProgress < 0) // Ensure progress doesn't go below 0
+            if (iProgress < 0) 
                 iProgress = 0;
 
-            // Update progress bar
+
             HWND hProgressBar = GetDlgItem(hDlg, IDC_PROGRESS1);
             SendMessage(hProgressBar, PBM_SETPOS, iProgress, 0);
 
-            // Check if the timer has reached 0
+
             if (iProgress == 0)
             {
-                KillTimer(hDlg, nTimerID); // Stop the timer
-                nTimerID = 0; // Reset the timer ID
+                KillTimer(hDlg, nTimerID);
+                nTimerID = 0;
             }
         }
         break;
     }
     case WM_DESTROY:
-        // Make sure to clean up the timer when the dialog is destroyed
         if (nTimerID != 0)
         {
             KillTimer(hDlg, nTimerID);
@@ -300,7 +419,7 @@ INT_PTR CALLBACK MyF(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_CLOSE:
-        EndDialog(hDlg, 0); // Close the dialog box
+        EndDialog(hDlg, 0); 
         break;
     }
     return (INT_PTR)FALSE;
