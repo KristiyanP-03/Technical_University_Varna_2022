@@ -1,6 +1,5 @@
 package observer;
 
-
 class Camera implements Observer {
     private String cameraId;
     public Camera(String id) {
