@@ -1,4 +1,4 @@
-package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel;
+package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.CommandProcessor;
 
 public enum CommandType {
     OPEN,
@@ -13,6 +13,7 @@ public enum CommandType {
     DETERMINISTIC,
     RECOGNIZE,
     REG,
+    SAVEA,
     UNION,
     CONCAT,
     UN;

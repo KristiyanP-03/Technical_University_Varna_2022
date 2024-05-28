@@ -1,6 +1,6 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Kernel.Command;
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -78,18 +78,7 @@ public class RegCommand implements Command {
 
         regexList.add(regex);
         transitionList.add(transitions);
-
-        /*
-        for (int startState : transitions.keySet()) {
-            Map<Character, List<Integer>> transitionMap = transitions.get(startState);
-            for (char input : transitionMap.keySet()) {
-                List<Integer> endStates = transitionMap.get(input);
-                for (int endState : endStates) {
-                    System.out.println(startState + "->" + input + "->" + endState);
-                }
-            }
-        }
-        */
+        
     }
 
     public static List<String> getRegexList() {
