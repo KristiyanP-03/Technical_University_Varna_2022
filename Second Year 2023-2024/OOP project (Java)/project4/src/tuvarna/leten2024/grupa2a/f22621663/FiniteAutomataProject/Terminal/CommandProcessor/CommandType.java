@@ -16,6 +16,8 @@ public enum CommandType {
     SAVEA,
     UNION,
     CONCAT,
-    UN;
+    UN,
+    FINITE,
+    MUTATOR;
 }
 

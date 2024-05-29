@@ -1,8 +1,10 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 import java.util.List;
+
+
 
 public class UnionCommand implements Command {
     @Override
@@ -34,7 +36,8 @@ public class UnionCommand implements Command {
                 }
             }
 
-            regexList.add(unionRegex.toString());
+            RegCommand regCommand = new RegCommand();
+            regCommand.execute(new String[] {unionRegex.toString()});
 
             System.out.println("Union of regexes with IDs " + id1 + " and " + id2 + " created with ID: " + (regexList.size() - 1));
         } catch (NumberFormatException e) {

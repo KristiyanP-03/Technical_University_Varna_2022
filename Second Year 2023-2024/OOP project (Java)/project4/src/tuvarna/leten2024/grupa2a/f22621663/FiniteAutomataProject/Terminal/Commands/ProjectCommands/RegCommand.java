@@ -1,22 +1,19 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.CommandProcessor.Automaton;
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
+import java.util.*;
+
 
 
 public class RegCommand implements Command {
     private static final List<String> regexList = new ArrayList<>();
-    private static final List<Map<Integer, Map<Character, List<Integer>>>> transitionList = new ArrayList<>();
+    private static final List<Automaton> automatonList = new ArrayList<>();
 
-
-
-    public static Map<Integer, Map<Character, List<Integer>>> getTransitions(int id) {
-        if (id >= 0 && id < transitionList.size()) {
-            return transitionList.get(id);
+    public static Automaton getAutomaton(int id) {
+        if (id >= 0 && id < automatonList.size()) {
+            return automatonList.get(id);
         } else {
             return null;
         }
@@ -27,15 +24,12 @@ public class RegCommand implements Command {
         regexList.addAll(uniqueRegexes);
     }
 
-
     @Override
     public void execute(String[] args) {
         if (args.length != 1) {
             System.out.println("Usage: reg <regex>");
             return;
         }
-
-
 
         String regex = args[0];
         if (regex.equals("emptyreg")) {
@@ -45,40 +39,37 @@ public class RegCommand implements Command {
             return;
         }
 
-        int state = 1;
-        int nextState = 2;
 
-        Map<Integer, Map<Character, List<Integer>>> transitions = new HashMap<>();
-
+        int state = 0;
+        int nextState = 1;
+        List<Automaton.Transition> transitions = new ArrayList<>();
 
         for (int i = 0; i < regex.length(); i++) {
             char letter = regex.charAt(i);
 
             if (letter == '&') {
-                transitions.computeIfAbsent(state, k -> new HashMap<>()).computeIfAbsent(letter, k -> new ArrayList<>()).add(state);
-                i++;
+                transitions.add(new Automaton.Transition(state, letter, state));
+
             } else if (i + 1 < regex.length() && regex.charAt(i + 1) == '*') {
-                transitions.computeIfAbsent(state, k -> new HashMap<>()).computeIfAbsent(letter, k -> new ArrayList<>()).add(state);
+                transitions.add(new Automaton.Transition(state, letter, state));
                 i++;
-            } else if (letter == '+') {
-                transitions.computeIfAbsent(1, k -> new HashMap<>()).computeIfAbsent(regex.charAt(i + 1), k -> new ArrayList<>()).add(state);
+            } else if (i + 1 < regex.length() && regex.charAt(i + 1) == '+') {
+                transitions.add(new Automaton.Transition(state, letter, nextState));
+                state = 0;
                 i++;
             } else {
-                transitions.computeIfAbsent(state, k -> new HashMap<>()).computeIfAbsent(letter, k -> new ArrayList<>()).add(nextState);
+                transitions.add(new Automaton.Transition(state, letter, nextState));
                 state = nextState;
                 nextState++;
             }
-
         }
-
 
         int id = regexList.size();
 
         System.out.println("Automaton created for regular expression " + regex + " with ID: " + id);
 
         regexList.add(regex);
-        transitionList.add(transitions);
-        
+        automatonList.add(new Automaton(transitions));
     }
 
     public static List<String> getRegexList() {

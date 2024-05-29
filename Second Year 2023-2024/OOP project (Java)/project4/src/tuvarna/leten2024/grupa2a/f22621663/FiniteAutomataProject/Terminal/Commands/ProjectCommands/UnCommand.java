@@ -4,6 +4,7 @@ import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Comman
 
 import java.util.List;
 
+
 public class UnCommand implements Command {
     @Override
     public void execute(String[] args) {
@@ -12,28 +13,35 @@ public class UnCommand implements Command {
             return;
         }
 
-        int id;
         try {
-            id = Integer.parseInt(args[0]);
+            int id = Integer.parseInt(args[0]);
+
+
+            List<String> regexList = RegCommand.getRegexList();
+
+
+            if (id < 0 || id >= regexList.size()) {
+                System.out.println("Invalid IDs.");
+                return;
+            }
+
+
+            String regex = regexList.get(id);
+
+            if(regex.contains("*")){
+                String concatRegex = regex + regex;
+                RegCommand regCommand = new RegCommand();
+                regCommand.execute(new String[] {concatRegex});
+                System.out.println("Създаден е нов автомат от позитивната обвивка на стария");
+            }
+            else{
+                System.out.println("Не може да бъде създадена позитивна обвивка на този автомат");
+            }
+
+
+
         } catch (NumberFormatException e) {
-            System.out.println("Invalid ID: " + args[0]);
-            return;
+            System.out.println("Invalid IDs.");
         }
-
-        List<String> regexList = RegCommand.getRegexList();
-
-        if (id >= 0 && id < ((List<?>) regexList).size()) {
-            String oldRegex = regexList.get(id);
-            String newRegex = removeStarsAndPluses(oldRegex);
-
-            Command regCommand = new RegCommand();
-            regCommand.execute(new String[]{newRegex});
-        } else {
-            System.out.println("Invalid ID: " + id);
-        }
-    }
-
-    private String removeStarsAndPluses(String regex) {
-        return regex.replaceAll("[*+]", "");
     }
 }

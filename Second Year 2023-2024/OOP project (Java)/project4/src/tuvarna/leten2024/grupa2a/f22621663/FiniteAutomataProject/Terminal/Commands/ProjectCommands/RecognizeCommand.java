@@ -1,9 +1,9 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 import java.util.List;
-import java.util.ArrayList;
+
 
 
 public class RecognizeCommand implements Command {
@@ -14,57 +14,29 @@ public class RecognizeCommand implements Command {
             return;
         }
 
+        int id;
         try {
-            int id = Integer.parseInt(args[0]);
-            String word = args[1];
+            id = Integer.parseInt(args[0]);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid ID.");
+            return;
+        }
 
-            List<String> regexList = RegCommand.getRegexList();
+        List<String> regexList = RegCommand.getRegexList();
+        if (id < 0 || id >= regexList.size()) {
+            System.out.println("Invalid ID.");
+            return;
+        }
 
-            if (id < 0 || id >= regexList.size()) {
-                System.out.println("Invalid ID.");
-                return;
-            }
+        String regex = regexList.get(id);
+        String word = args[1];
 
-            String regex = regexList.get(id);
-
+        if (regex.contains("+")) {
             String[] parts = regex.split("\\+");
-            List<String> subRegexList = new ArrayList<>();
-
-            for (String part : parts) {
-                StringBuilder subRegex = new StringBuilder();
-                boolean inBracket = false;
-                int bracketCount = 0;
-
-                for (int i = 0; i < part.length(); i++) {
-                    char c = part.charAt(i);
-
-                    if (c == '(') {
-                        inBracket = true;
-                        bracketCount++;
-                    } else if (c == ')') {
-                        bracketCount--;
-                        if (bracketCount == 0) {
-                            inBracket = false;
-                        }
-                    }
-
-                    if (!inBracket && (c == '*' || c == '+')) {
-                        if (i > 0 && part.charAt(i - 1) == ')') {
-                            subRegex.insert(subRegex.lastIndexOf(")") + 1, c);
-                        } else {
-                            subRegex.append(c);
-                        }
-                    } else {
-                        subRegex.append(c);
-                    }
-                }
-
-                subRegexList.add(subRegex.toString());
-            }
 
             boolean match = false;
-            for (String subRegex : subRegexList) {
-                if (word.matches(subRegex)) {
+            for (String part : parts) {
+                if (word.matches(part.replace("*", ".*"))) {
                     match = true;
                     break;
                 }
@@ -75,14 +47,47 @@ public class RecognizeCommand implements Command {
             } else {
                 System.out.println("The word \"" + word + "\" is not accepted by the regex.");
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid ID.");
+            return;
+        }
+
+        int regexIndex = 0;
+        int wordIndex = 0;
+
+        while (regexIndex < regex.length() && wordIndex < word.length()) {
+            char regexChar = regex.charAt(regexIndex);
+
+            if (regexChar == '*') {
+                if (regexIndex == 0) {
+                    System.out.println("Invalid regex.");
+                    return;
+                }
+
+                char loopedChar = regex.charAt(regexIndex - 1);
+
+                while (wordIndex < word.length() && word.charAt(wordIndex) == loopedChar) {
+                    wordIndex++;
+                }
+
+                regexIndex++;
+            } else {
+                if (wordIndex < word.length() && word.charAt(wordIndex) == regexChar) {
+                    regexIndex++;
+                    wordIndex++;
+                } else {
+                    System.out.println("The word \"" + word + "\" is not accepted by the regex.");
+                    return;
+                }
+            }
+        }
+
+        while (regexIndex < regex.length() && regex.charAt(regexIndex) == '*') {
+            regexIndex++;
+        }
+
+        if (regexIndex == regex.length() && wordIndex == word.length()) {
+            System.out.println("The word \"" + word + "\" is accepted by the regex.");
+        } else {
+            System.out.println("The word \"" + word + "\" is not accepted by the regex.");
         }
     }
 }
-
-
-
-
-
-

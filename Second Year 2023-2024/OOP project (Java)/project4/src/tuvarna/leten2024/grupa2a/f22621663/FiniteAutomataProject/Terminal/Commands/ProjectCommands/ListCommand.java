@@ -1,8 +1,11 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 import java.util.List;
+
+
+
 public class ListCommand implements Command {
     @Override
     public void execute(String[] args) {

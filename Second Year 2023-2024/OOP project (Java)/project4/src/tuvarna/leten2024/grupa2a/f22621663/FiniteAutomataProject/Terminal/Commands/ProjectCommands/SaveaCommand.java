@@ -9,7 +9,7 @@ import java.util.List;
 
 
 
-public class SaveAutomataCommand implements Command {
+public class SaveaCommand implements Command {
     @Override
     public void execute(String[] args) {
         if (args.length != 2) {
@@ -27,7 +27,7 @@ public class SaveAutomataCommand implements Command {
             String regex = regexList.get(index);
             try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
                 writer.println(regex);
-                System.out.println("Automaton saved successfully to " + filename + ".txt");
+                System.out.println("Automaton saved successfully to " + filename);
             } catch (IOException e) {
                 System.out.println("Error saving automaton to file: " + e.getMessage());
             }

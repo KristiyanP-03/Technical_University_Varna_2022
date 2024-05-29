@@ -1,8 +1,10 @@
 package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.ProjectCommands;
 
-import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
+import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 import java.util.List;
+
+
 
 public class DeterministicCommand implements Command {
     @Override
@@ -11,6 +13,7 @@ public class DeterministicCommand implements Command {
             System.out.println("Usage: deterministic <id>");
             return;
         }
+
 
         try {
             int id = Integer.parseInt(args[0]);
@@ -23,8 +26,6 @@ public class DeterministicCommand implements Command {
             }
 
             String regex = regexList.get(id);
-
-
             boolean deterministic = isDeterministic(regex);
 
             if (deterministic) {
@@ -38,7 +39,29 @@ public class DeterministicCommand implements Command {
     }
 
     private boolean isDeterministic(String regex) {
-        return !regex.contains("+") && !regex.contains("*") && !regex.contains("(") && !regex.contains(")");
+        int length = regex.length();
+        for (int i = 0; i < length; i++) {
+            char currentChar = regex.charAt(i);
+            if (currentChar == '*') {
+                if (i + 1 < length) {
+                    char nextChar = regex.charAt(i + 1);
+                    if (nextChar == regex.charAt(i-1)) {
+                        return false;
+                    }
+                }
+            }
+            if (currentChar == '+') {
+                if (i + 1 < length) {
+                    char nextChar = regex.charAt(i + 1);
+                    if (nextChar == regex.charAt(0)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
     }
 }
+
 

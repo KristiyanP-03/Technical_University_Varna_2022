@@ -19,6 +19,8 @@ public class CommandExecutor {
         initializeCommands();
     }
 
+
+
     private void initializeCommands() {
         commandMap.put(CommandType.OPEN, new OpenCommand(this));
         commandMap.put(CommandType.CLOSE, new CloseCommand(this));
@@ -32,11 +34,15 @@ public class CommandExecutor {
         commandMap.put(CommandType.DETERMINISTIC, new DeterministicCommand());
         commandMap.put(CommandType.RECOGNIZE, new RecognizeCommand());
         commandMap.put(CommandType.REG, new RegCommand());
-        commandMap.put(CommandType.SAVEA, new SaveAutomataCommand());
+        commandMap.put(CommandType.SAVEA, new SaveaCommand());
         commandMap.put(CommandType.UNION, new UnionCommand());
         commandMap.put(CommandType.CONCAT, new ConcatCommand());
         commandMap.put(CommandType.UN, new UnCommand());
+        commandMap.put(CommandType.FINITE, new FiniteCommand());
+        commandMap.put(CommandType.MUTATOR, new MutatorCommand());
     }
+
+
 
     public void executeCommand(String command, String[] args) {
         CommandType commandType;
@@ -48,10 +54,14 @@ public class CommandExecutor {
         }
 
 
-        if (!fileOpened && (commandType == CommandType.SAVE || commandType == CommandType.SAVEAS || commandType == CommandType.CLOSE)) {
+
+        if (!fileOpened &&
+                (commandType == CommandType.SAVE || commandType == CommandType.SAVEAS
+                        || commandType == CommandType.CLOSE)) {
             System.out.println("Файлът не е отворен за четене. Моля, отворете файла с командата 'open'.");
             return;
         }
+
 
 
         Command cmd = commandMap.get(commandType);
@@ -64,18 +74,18 @@ public class CommandExecutor {
         cmd.execute(args);
     }
 
+
+
+
     public void setFileOpened(boolean isOpen) {
         this.fileOpened = isOpen;
     }
-
     public boolean isFileOpened() {
         return fileOpened;
     }
-
     public void setCurrentFileName(String fileName) {
         this.currentFileName = fileName;
     }
-
     public String getCurrentFileName() {
         return currentFileName;
     }
