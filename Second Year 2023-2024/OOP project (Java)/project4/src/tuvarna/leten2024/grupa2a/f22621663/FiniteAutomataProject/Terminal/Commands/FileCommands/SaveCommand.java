@@ -11,13 +11,26 @@ import java.util.List;
 
 
 
+/**
+ * Класът SaveCommand представлява команда за запазване на текущото състояние на автоматите в отворения файл.
+ */
 public class SaveCommand implements Command {
     private final CommandExecutor commandExecutor;
 
+    /**
+     * Конструктор за SaveCommand.
+     *
+     * @param commandExecutor изпълнител на командите
+     */
     public SaveCommand(CommandExecutor commandExecutor) {
         this.commandExecutor = commandExecutor;
     }
 
+    /**
+     * Изпълнява командата за запазване на текущото състояние на автоматите в отворения файл.
+     *
+     * @param args аргументи на командата, които трябва да бъдат празни ([]), иначе извежда съобщение за грешка
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 0) {
@@ -44,3 +57,4 @@ public class SaveCommand implements Command {
         }
     }
 }
+

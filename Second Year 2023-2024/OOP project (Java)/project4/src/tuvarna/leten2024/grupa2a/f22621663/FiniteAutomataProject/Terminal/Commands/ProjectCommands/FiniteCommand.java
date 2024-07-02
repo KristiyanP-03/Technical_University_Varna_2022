@@ -4,11 +4,22 @@ import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Comman
 
 import java.util.List;
 
+/**
+ * Имплементация на командата за проверка дали автоматът с определен идентификатор е краен.
+ */
 public class FiniteCommand implements Command {
+
+    /**
+     * Изпълнява командата за проверка дали автоматът с даден идентификатор е краен.
+     * Извежда съобщение дали автоматът е краен или не е, в зависимост от наличието на звезда ('*') в регулярния израз.
+     *
+     * @param args Аргументи на командата. Очаква се да съдържа само един ID на автомата.
+     *             Извежда съобщение за употреба, ако броят на аргументите не е правилен.
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 1) {
-            System.out.println("Usage: finite <id>");
+            System.out.println("Употреба: finite <id>");
             return;
         }
 
@@ -18,21 +29,22 @@ public class FiniteCommand implements Command {
             List<String> regexList = RegCommand.getRegexList();
 
             if (id < 0 || id >= regexList.size()) {
-                System.out.println("Invalid ID.");
+                System.out.println("Невалиден идентификатор.");
                 return;
             }
 
             String regex = regexList.get(id);
 
             if (regex.endsWith("*")) {
-                System.out.println("The automaton with ID " + id + " is not finite.");
+                System.out.println("Автоматът с идентификатор " + id + " не е краен.");
             } else {
-                System.out.println("The automaton with ID " + id + " is finite.");
+                System.out.println("Автоматът с идентификатор " + id + " е краен.");
             }
 
         } catch (NumberFormatException e) {
-            System.out.println("Invalid ID.");
+            System.out.println("Невалиден идентификатор.");
         }
     }
 }
+
 

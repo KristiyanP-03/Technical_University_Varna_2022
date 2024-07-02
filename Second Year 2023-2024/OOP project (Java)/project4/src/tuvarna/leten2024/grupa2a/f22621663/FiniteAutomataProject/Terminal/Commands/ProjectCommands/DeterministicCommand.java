@@ -6,7 +6,17 @@ import java.util.List;
 
 
 
+/**
+ * Класът DeterministicCommand представлява команда за проверка дали даден автомат е детерминистичен,
+ * идентифициран със зададен индекс.
+ */
 public class DeterministicCommand implements Command {
+
+    /**
+     * Изпълнява командата за проверка дали даден автомат е детерминистичен, идентифициран със зададен индекс.
+     *
+     * @param args аргументи на командата: id - индекс на автомата за проверка
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 1) {
@@ -14,12 +24,12 @@ public class DeterministicCommand implements Command {
             return;
         }
 
-
         try {
             int id = Integer.parseInt(args[0]);
 
             List<String> regexList = RegCommand.getRegexList();
 
+            // Проверка за валидност на индекса
             if (id < 0 || id >= regexList.size()) {
                 System.out.println("Invalid ID.");
                 return;
@@ -28,6 +38,7 @@ public class DeterministicCommand implements Command {
             String regex = regexList.get(id);
             boolean deterministic = isDeterministic(regex);
 
+            // Извеждане на резултат от проверката за детерминистичност
             if (deterministic) {
                 System.out.println("The automaton with ID " + id + " is deterministic.");
             } else {
@@ -38,6 +49,12 @@ public class DeterministicCommand implements Command {
         }
     }
 
+    /**
+     * Проверява дали даден регулярен израз е детерминистичен.
+     *
+     * @param regex регулярен израз за проверка
+     * @return true ако регулярният израз е детерминистичен, в противен случай false
+     */
     private boolean isDeterministic(String regex) {
         int length = regex.length();
         for (int i = 0; i < length; i++) {
@@ -45,7 +62,7 @@ public class DeterministicCommand implements Command {
             if (currentChar == '*') {
                 if (i + 1 < length) {
                     char nextChar = regex.charAt(i + 1);
-                    if (nextChar == regex.charAt(i-1)) {
+                    if (nextChar == regex.charAt(i - 1)) {
                         return false;
                     }
                 }
@@ -63,5 +80,4 @@ public class DeterministicCommand implements Command {
         return true;
     }
 }
-
 

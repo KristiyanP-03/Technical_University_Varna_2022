@@ -2,7 +2,16 @@ package tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Comma
 
 import tuvarna.leten2024.grupa2a.f22621663.FiniteAutomataProject.Terminal.Commands.Command;
 
+/**
+ * Класът HelpCommand представлява команда за извеждане на информация за поддържаните команди.
+ */
 public class HelpCommand implements Command {
+    /**
+     * Изпълнява командата за извеждане на помощна информация за поддържаните команди.
+     * Ако са подадени аргументи, извежда съобщение за грешка. В противен случай, извежда описание на всички поддържани команди.
+     *
+     * @param args аргументи на командата
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 0) {
@@ -37,4 +46,3 @@ public class HelpCommand implements Command {
         System.out.println(helpMessage);
     }
 }
-

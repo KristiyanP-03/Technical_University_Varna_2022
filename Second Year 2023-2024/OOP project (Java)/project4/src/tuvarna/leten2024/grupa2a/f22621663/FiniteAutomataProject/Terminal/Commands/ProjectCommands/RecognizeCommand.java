@@ -6,11 +6,21 @@ import java.util.List;
 
 
 
+/**
+ * Имплементация на командата за разпознаване дали дадена дума е приета от регулярен израз с определен ID.
+ */
 public class RecognizeCommand implements Command {
+
+    /**
+     * Изпълнява командата за разпознаване дали дадена дума е приета от регулярен израз с определен ID.
+     * Ако ID или думата са невалидни, извежда съобщение за грешка.
+     *
+     * @param args Аргументи на командата. Очаква се два аргумента: ID на регулярния израз и дума за разпознаване.
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 2) {
-            System.out.println("Usage: recognize <id> <word>");
+            System.out.println("Употреба: recognize <id> <word>");
             return;
         }
 
@@ -18,13 +28,13 @@ public class RecognizeCommand implements Command {
         try {
             id = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
-            System.out.println("Invalid ID.");
+            System.out.println("Невалиден ID.");
             return;
         }
 
         List<String> regexList = RegCommand.getRegexList();
         if (id < 0 || id >= regexList.size()) {
-            System.out.println("Invalid ID.");
+            System.out.println("Невалиден ID.");
             return;
         }
 
@@ -43,9 +53,9 @@ public class RecognizeCommand implements Command {
             }
 
             if (match) {
-                System.out.println("The word \"" + word + "\" is accepted by the regex.");
+                System.out.println("Думата \"" + word + "\" е приета от регулярния израз.");
             } else {
-                System.out.println("The word \"" + word + "\" is not accepted by the regex.");
+                System.out.println("Думата \"" + word + "\" не е приета от регулярния израз.");
             }
             return;
         }
@@ -58,7 +68,7 @@ public class RecognizeCommand implements Command {
 
             if (regexChar == '*') {
                 if (regexIndex == 0) {
-                    System.out.println("Invalid regex.");
+                    System.out.println("Невалиден регулярен израз.");
                     return;
                 }
 
@@ -74,7 +84,7 @@ public class RecognizeCommand implements Command {
                     regexIndex++;
                     wordIndex++;
                 } else {
-                    System.out.println("The word \"" + word + "\" is not accepted by the regex.");
+                    System.out.println("Думата \"" + word + "\" не е приета от регулярния израз.");
                     return;
                 }
             }
@@ -85,9 +95,9 @@ public class RecognizeCommand implements Command {
         }
 
         if (regexIndex == regex.length() && wordIndex == word.length()) {
-            System.out.println("The word \"" + word + "\" is accepted by the regex.");
+            System.out.println("Думата \"" + word + "\" е приета от регулярния израз.");
         } else {
-            System.out.println("The word \"" + word + "\" is not accepted by the regex.");
+            System.out.println("Думата \"" + word + "\" не е приета от регулярния израз.");
         }
     }
 }

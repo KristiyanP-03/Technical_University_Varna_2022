@@ -9,18 +9,28 @@ import java.util.Map;
 
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Класът CommandExecutor отговаря за изпълнението на команди.
+ */
 public class CommandExecutor {
     private final Map<CommandType, Command> commandMap;
     private boolean fileOpened;
     private String currentFileName;
 
+    /**
+     * Конструктор за инициализиране на CommandExecutor.
+     */
     public CommandExecutor() {
         commandMap = new HashMap<>();
         initializeCommands();
     }
 
-
-
+    /**
+     * Инициализира и добавя всички налични команди в командната карта.
+     */
     private void initializeCommands() {
         commandMap.put(CommandType.OPEN, new OpenCommand(this));
         commandMap.put(CommandType.CLOSE, new CloseCommand(this));
@@ -42,8 +52,12 @@ public class CommandExecutor {
         commandMap.put(CommandType.MUTATOR, new MutatorCommand());
     }
 
-
-
+    /**
+     * Изпълнява командата, базирана на въведения низ и аргументи.
+     *
+     * @param command Командата, която ще бъде изпълнена.
+     * @param args Аргументите на командата.
+     */
     public void executeCommand(String command, String[] args) {
         CommandType commandType;
         try {
@@ -53,8 +67,6 @@ public class CommandExecutor {
             return;
         }
 
-
-
         if (!fileOpened &&
                 (commandType == CommandType.SAVE || commandType == CommandType.SAVEAS
                         || commandType == CommandType.CLOSE)) {
@@ -62,30 +74,47 @@ public class CommandExecutor {
             return;
         }
 
-
-
         Command cmd = commandMap.get(commandType);
         if (cmd == null) {
             System.out.println("Невалидна команда.");
             return;
         }
 
-
         cmd.execute(args);
     }
 
-
-
-
+    /**
+     * Задава състоянието на отворен файл.
+     *
+     * @param isOpen Дали файлът е отворен.
+     */
     public void setFileOpened(boolean isOpen) {
         this.fileOpened = isOpen;
     }
+
+    /**
+     * Проверява дали файлът е отворен.
+     *
+     * @return Дали файлът е отворен.
+     */
     public boolean isFileOpened() {
         return fileOpened;
     }
+
+    /**
+     * Задава текущото име на файла.
+     *
+     * @param fileName Името на текущия файл.
+     */
     public void setCurrentFileName(String fileName) {
         this.currentFileName = fileName;
     }
+
+    /**
+     * Връща текущото име на файла.
+     *
+     * @return Името на текущия файл.
+     */
     public String getCurrentFileName() {
         return currentFileName;
     }

@@ -9,13 +9,26 @@ import java.nio.file.*;
 
 
 
+/**
+ * Класът SaveAsCommand представлява команда за запазване на съдържанието на текущия файл в нов файл.
+ */
 public class SaveAsCommand implements Command {
     private final CommandExecutor commandExecutor;
 
+    /**
+     * Конструктор за SaveAsCommand.
+     *
+     * @param commandExecutor изпълнител на командите
+     */
     public SaveAsCommand(CommandExecutor commandExecutor) {
         this.commandExecutor = commandExecutor;
     }
 
+    /**
+     * Изпълнява командата за запазване на съдържанието на текущия файл в нов файл.
+     *
+     * @param args аргументи на командата, като очаква точно два аргумента: път до директория и име на файл
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 2) {

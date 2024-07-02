@@ -8,16 +8,30 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+import java.util.List;
 
 
-
+/**
+ * Класът OpenCommand представлява команда за отваряне на файл и зареждане на съдържанието му.
+ */
 public class OpenCommand implements Command {
     private final CommandExecutor commandExecutor;
 
+    /**
+     * Конструктор за OpenCommand.
+     *
+     * @param commandExecutor изпълнител на командите
+     */
     public OpenCommand(CommandExecutor commandExecutor) {
         this.commandExecutor = commandExecutor;
     }
 
+    /**
+     * Изпълнява командата за отваряне на файл. Ако файлът не съществува, той се създава.
+     * След това се чете съдържанието му ред по ред и се добавят уникални регулярни изрази към списъка.
+     *
+     * @param args аргументи на командата, като трябва да съдържа точно едно име на файл
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 1) {
@@ -44,8 +58,15 @@ public class OpenCommand implements Command {
                 while ((regex = reader.readLine()) != null) {
                     if (!regex.isEmpty()) {
                         System.out.println("Regex read from " + regex);
-                        RegCommand.getRegexList().add(regex);
-                        id++;
+
+                        List<String> regexList = RegCommand.getRegexList();
+                        if (!regexList.contains(regex)) {
+                            RegCommand regCommand = new RegCommand();
+                            regCommand.execute(new String[] {regex});
+                            id++;
+                        } else {
+                            System.out.println("Regex already exists in the list, skipping: " + regex);
+                        }
                     }
                 }
 
@@ -62,4 +83,3 @@ public class OpenCommand implements Command {
         }
     }
 }
-

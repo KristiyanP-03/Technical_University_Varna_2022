@@ -6,8 +6,20 @@ import java.util.Scanner;
 
 
 
+/**
+ * Класът Main е началната точка на приложението.
+ * Непрекъснато чете потребителски вход от конзолата,
+ * обработва входа за извличане на команди и аргументи,
+ * и след това изпълнява съответната команда с помощта на CommandExecutor.
+ */
 public class Main {
 
+    /**
+     * Методът main инициализира CommandExecutor и Scanner,
+     * след което влиза в цикъл за непрекъснато четене и обработка на потребителския вход.
+     *
+     * @param args Командни аргументи (не се използват в това приложение).
+     */
     public static void main(String[] args) {
         CommandExecutor executor = new CommandExecutor();
         Scanner scanner = new Scanner(System.in);
